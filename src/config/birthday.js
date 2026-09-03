@@ -1,8 +1,7 @@
 /**
  * CONFIGURACIÓN CENTRAL — EXPERIENCIA DE CUMPLEAÑOS DE KIMBERLY
  * 
- * Puedes modificar los textos, fechas, recuerdos y rutas de fotografías fácilmente desde aquí.
- * Todos los campos admiten personalización inmediata.
+ * Contenido narrativo, escenas, recuerdos, cartas y textos de autor.
  */
 
 export const birthdayConfig = {
@@ -16,84 +15,115 @@ export const birthdayConfig = {
     greeting: "Hey, Kimberly...",
     pauseText: "Antes de que sigas mirando...",
     hookText: "tengo algo preparado especialmente para ti.",
-    buttonText: "Abrir experiencia ✨",
-    audioNotice: "(Sube un poquito el volumen para que se sienta mejor)"
+    buttonText: "Comenzar historia ✨",
+    audioNotice: "(Sube un poquito el volumen para escucharlo mejor)"
   },
 
-  // Escena 02: Cortometraje animado procedural ("La manzana, los brackets y el limón")
+  // Escena 02: Cortometraje animado ("La Manzana, los Brackets y el Limón")
   comic: {
-    badge: "HISTORIA 100% REAL (O CASI)",
-    panels: [
+    badge: "CORTOMETRAJE CÓMICO • BASADO EN HECHOS REALES",
+    beats: [
       {
         id: 1,
-        caption: "Todo comenzó hoy por la mañana... estaba pensando en que hoy es tu cumpleaños.",
-        thought: "«Hoy cumple Kimberly... hay que hacer algo épico...»",
-        doodle: "thinking"
+        timeMs: 4000,
+        text: "Todo comenzó hoy por la mañana... Estaba pensando en que hoy es tu cumpleaños.",
+        speech: "«Hoy cumple Kimberly... hay que hacer algo especial...»",
+        doodle: "thinking",
+        sound: null
       },
       {
         id: 2,
-        caption: "Pero de pronto... me dio un hambre tremenda. Y vi una manzana roja perfecta.",
-        thought: "«Una manzanita rápida para la energía cerebral.»",
-        doodle: "apple"
+        timeMs: 3600,
+        text: "Pero de repente... me dio un hambre tremenda. Y en la cocina vi una manzana roja perfecta.",
+        speech: "«Una manzana rápida para no desmayarme.»",
+        doodle: "apple",
+        sound: null
       },
       {
         id: 3,
-        caption: "Fui a pegarle un mordisco con toda la emoción del mundo...",
-        thought: "«¡CRUNCH!... espera...»",
-        doodle: "bite_fail"
+        timeMs: 3600,
+        text: "Fui con toda la intención de pegarle un mordisco crujiente...",
+        speech: "«¡A comer se ha dicho!... Espera...»",
+        doodle: "bite_approach",
+        sound: null
       },
       {
         id: 4,
-        caption: "RECORDÉ QUE TENGO BRACKETS. Mordisco denegado. Ley de la odontología número 1.",
-        thought: "«No puedo morderla entera o desintegro un bracket.»",
-        doodle: "brackets_warning"
+        timeMs: 4200,
+        text: "RECORDÉ QUE TENGO BRACKETS. Prohibido morder manzanas enteras desde el día 1.",
+        speech: "«Si muerdo esto, desintegro tres brackets de un viaje.»",
+        doodle: "brackets_alert",
+        sound: "bite"
       },
       {
         id: 5,
-        caption: "Decidí actuar como persona civilizada: buscar un cuchillo para cortarla en rodajas finas.",
-        thought: "«Ingeniería aplicada a la fruta.»",
-        doodle: "knife"
+        timeMs: 3800,
+        text: "Así que decidí actuar civilizadamente: buscar un cuchillo para cortarla en rodajas finas.",
+        speech: "«Ingeniería aplicada a la fruta.»",
+        doodle: "knife",
+        sound: "slice"
       },
       {
         id: 6,
-        caption: "Y por hacerme el chef profesional... ¡ZAS! Me corté un dedo.",
-        thought: "«¡AUUUCH! Sangre inocente derramada.»",
-        doodle: "cut_finger"
+        timeMs: 3800,
+        text: "Y por hacerme el chef profesional cortando rápido... ¡ZAS! Me corté un dedo.",
+        speech: "«¡AUUUCH! Dedo herido en combate.»",
+        doodle: "cut_finger",
+        sound: "slice"
       },
       {
         id: 7,
-        caption: "Fui a la cocina por un poco de agua o algo... y tropecé con medio limón que estaba en la mesa.",
-        thought: "«No... no mires hacia arriba...»",
-        doodle: "lemon_fall"
+        timeMs: 4400,
+        text: "Fui a buscar con qué limpiarme... y tropecé con medio limón que estaba en la mesa.",
+        speech: "«No... por favor, universo, no...»",
+        doodle: "lemon_fall",
+        sound: null
       },
       {
         id: 8,
-        caption: "EL JUGO DE LIMÓN CAYÓ EXACTAMENTE EN EL CORTE. DOLOR GALÁCTICO.",
-        thought: "«¡¿POR QUÉ EL UNIVERSO CONSPIRA CONTRA MÍ HOY?!»",
-        doodle: "lemon_scream"
+        timeMs: 5000,
+        text: "EL JUGO DE LIMÓN CAYÓ EXACTAMENTE EN EL CORTE. DOLOR GALÁCTICO.",
+        speech: "«¡¿POR QUÉ CON LIMÓN?! ¡¿QUÉ HICE YO?!»",
+        doodle: "lemon_scream",
+        sound: "scream"
       },
+      // CORTE DRAMÁTICO / SILENCIO
       {
         id: 9,
-        caption: "Uf...",
-        thought: "«Sobreviví... apenas.»",
-        doodle: "exhausted"
+        timeMs: 3200,
+        text: "...",
+        speech: "",
+        doodle: "blackout",
+        sound: null
       },
+      // REMATE AFECTIVO INESPERADO
       {
         id: 10,
-        caption: "En fin... toda esta estupidez sólo para decirte que, aunque sea un desastre comiendo manzanas...",
-        thought: "«Ojalá pudiera estar contigo hoy para felicitarte en persona.»",
-        doodle: "sweet_shift"
+        timeMs: 5500,
+        text: "Y no sabes cuánto me arde no poder estar hoy contigo.",
+        speech: "«De verdad.»",
+        doodle: "punchline",
+        sound: "sparkle"
+      },
+      // SUSPIRO FINAL
+      {
+        id: 11,
+        timeMs: 4000,
+        text: "Uf.",
+        speech: "«En fin... Ahora sí.»",
+        doodle: "sigh",
+        sound: null
       }
     ],
-    nextButton: "Y bueno... hablando de hoy →"
+    continueButton: "Ahora sí... Continuemos ✨"
   },
 
   // Escena 03: Gran Revelación
   reveal: {
-    superTitle: "¡HOY ES TU DÍA!",
+    superTitle: "¡HOY SE CELEBRA A LO GRANDE!",
     mainTitle: "¡FELIZ CUMPLEAÑOS!",
     nameHighlight: "KIMBERLY",
-    subtitle: "Una vuelta más al sol para una de las personas más geniales que conozco."
+    subtitle: "Una vuelta más al sol para una de las personas más increíbles, auténticas y divertidas que conozco."
   },
 
   // Escena 04: Mensaje Personal (Cálido, conversacional, con complicidad)
@@ -112,7 +142,7 @@ export const birthdayConfig = {
   // Escena 05: Galería de Fotos (Scrapbook)
   gallery: {
     title: "Álbum de Recuerdos",
-    subtitle: "Pequeños instantes capturados en el tiempo (toca cualquier foto para verla de cerca)",
+    subtitle: "Pequeños instantes capturados en el tiempo (toca cualquier foto para verla en pantalla completa)",
     photos: [
       {
         id: 1,
@@ -121,8 +151,7 @@ export const birthdayConfig = {
         date: "Momento favorito",
         tag: "Inolvidable",
         rotation: -2,
-        placeholderColor: "#F8B195",
-        placeholderIcon: "camera"
+        placeholderColor: "#F8B195"
       },
       {
         id: 2,
@@ -130,9 +159,8 @@ export const birthdayConfig = {
         caption: "Una de esas miradas de «¿qué estás inventando ahora?»",
         date: "Anécdota clásica",
         tag: "Cómplices",
-        rotation: 3,
-        placeholderColor: "#C06C84",
-        placeholderIcon: "smile"
+        rotation: 2.5,
+        placeholderColor: "#C06C84"
       },
       {
         id: 3,
@@ -141,8 +169,7 @@ export const birthdayConfig = {
         date: "Buenas pláticas",
         tag: "Café & Risas",
         rotation: -1.5,
-        placeholderColor: "#6C5B7B",
-        placeholderIcon: "coffee"
+        placeholderColor: "#6C5B7B"
       },
       {
         id: 4,
@@ -150,9 +177,8 @@ export const birthdayConfig = {
         caption: "Simplemente tú siendo tú (y brillando sin esfuerzo)",
         date: "Especial",
         tag: "Auténtica",
-        rotation: 2.5,
-        placeholderColor: "#355C7D",
-        placeholderIcon: "sparkles"
+        rotation: 2,
+        placeholderColor: "#355C7D"
       },
       {
         id: 5,
@@ -160,9 +186,8 @@ export const birthdayConfig = {
         caption: "Cuando el plan era tranquilo pero terminó siendo una aventura",
         date: "Aventura improvisada",
         tag: "Momentos top",
-        rotation: -3,
-        placeholderColor: "#E9B872",
-        placeholderIcon: "map"
+        rotation: -2.5,
+        placeholderColor: "#E9B872"
       },
       {
         id: 6,
@@ -170,9 +195,8 @@ export const birthdayConfig = {
         caption: "La mejor sonrisa de todas. Guardada para siempre aquí.",
         date: "Hoy y siempre",
         tag: "La mejor",
-        rotation: 1.8,
-        placeholderColor: "#FF6B6B",
-        placeholderIcon: "heart_sketch"
+        rotation: 1.5,
+        placeholderColor: "#FF6B6B"
       }
     ]
   },
@@ -206,14 +230,26 @@ export const birthdayConfig = {
     {
       id: "m4",
       number: "04",
-      title: "La admiración silenciosa",
+      title: "La admiración sincera",
       text: "Ver cómo le pones ganas a lo que haces, cómo cuidas a los tuyos y la nobleza tan grande que llevas dentro.",
       icon: "star",
       tag: "De verdad"
     }
   ],
 
-  // Escena 07: Pequeña sorpresa interactiva (Cupcake con vela)
+  // NUEVA SECCIÓN 15: Pedir un deseo / Regalo
+  wish: {
+    badge: "UN DETALLE PARA TI",
+    title: "Bueno... ahora te toca a ti.",
+    subtitle: "Si pudieras pedir un regalo, un plan o un deseo cualquiera para este nuevo año de vida... ¿cuál sería? (Cero pena, no hay respuestas incorrectas).",
+    placeholder: "Escribe aquí lo que se te ocurra... un libro, una salida por café, un postre, un deseo secreto...",
+    buttonSave: "Guardar mi deseo en la carta ✨",
+    savedTitle: "¡Deseo guardado con éxito! 🌟",
+    savedMessage: "Tu deseo ha quedado registrado en este rincón especial. Me tocará ver cómo me las ingenio para cumplirlo...",
+    shareWhatsappText: "Compartírselo a Andrés por WhatsApp 💬"
+  },
+
+  // Escena 07: Cupcake interactivo con vela
   surprise: {
     promptQuestion: "Creo que todavía falta algo importante aquí...",
     buttonText: "¿Qué cosa? 👀",
@@ -223,7 +259,7 @@ export const birthdayConfig = {
     wishGrantedText: "Que todo lo bonito que le das al mundo regrese a ti multiplicado por diez. (Y sí, tienes derecho a pedir doble porción de pastel hoy)."
   },
 
-  // Escena 08: Carta manuscrita en sobre físico
+  // Escena 08: Carta manuscrita en sobre físico (100% fotográfica)
   letter: {
     badge: "PALABRAS DE PUÑO Y LETRA",
     envelopeTitle: "Casi se me olvida lo más importante...",
@@ -235,7 +271,7 @@ export const birthdayConfig = {
         id: 1,
         image: "./assets/letter/carta-01.jpg",
         altText: "Página 1 de la carta para Kimberly",
-        note: "Página 1 de 2 — Escrita con calma pensando en ti"
+        note: "Página 1 de 2 — Escrita a mano con calma pensando en ti"
       },
       {
         id: 2,
@@ -243,16 +279,6 @@ export const birthdayConfig = {
         altText: "Página 2 de la carta para Kimberly",
         note: "Página 2 de 2 — Con todo el cariño del mundo"
       }
-    ],
-    fallbackLetterText: [
-      "Querida Kimberly,",
-      "Si estás leyendo esto, sobreviviste a la historia de la manzana y el limón.",
-      "Quería dejarte plasmado en papel algo que a veces las palabras cotidianas no alcanzan a dimensionar: lo mucho que aprecio tenerte en mi vida.",
-      "Gracias por tu autenticidad, por no cambiar tu esencia por encajar con nadie, por ser esa mezcla perfecta entre madurez y ocurrencias locas.",
-      "Deseo de corazón que este año nuevo de vida te traiga toda la felicidad, paz y proyectos cumplidos que tanto te mereces.",
-      "Nunca dejes de sonreír como lo haces.",
-      "Con todo mi cariño,",
-      "Andrés"
     ]
   },
 
@@ -263,7 +289,7 @@ export const birthdayConfig = {
     quote: "«Hay personas que hacen el mundo un poquito más cálido simplemente estando en él. Tú eres una de ellas.»",
     closingNote: "Pásala hermoso hoy, disfruta a tu gente, ríete hasta que te duela el estómago... y no te olvides de guardarme un pedacito de pastel.",
     signOff: "Feliz cumpleaños, Kimberly. ✨",
-    replayButton: "Volver a ver la historia de la manzana 🍎",
+    replayButton: "Volver a ver el cortometraje 🍎",
     soundCredits: "Hecho con dedicación y cariño exclusivamente para ti."
   },
 
@@ -272,7 +298,7 @@ export const birthdayConfig = {
     {
       id: "egg-star",
       trigger: "star-doodle",
-      message: "⭐ Has encontrado una estrella secreta: ¡Kimberly tiene un 100% de probabilidad de tener un año brillante!"
+      message: "⭐ ¡Has descubierto una estrella secreta! Kimberly tiene un 100% de probabilidad de tener un año increíble."
     },
     {
       id: "egg-bracket",
@@ -287,7 +313,7 @@ export const birthdayConfig = {
     {
       id: "egg-stamp",
       trigger: "postal-stamp",
-      message: "💌 Sello oficial de autenticidad: Esta página no fue hecha por una IA aburrida, fue pensada para ti."
+      message: "💌 Sello oficial de autenticidad: Esta experiencia fue pensada y programada con muchísimo cariño para ti."
     }
   ]
 };

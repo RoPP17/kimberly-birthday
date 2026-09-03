@@ -145,7 +145,7 @@ export const Scene05ScrapbookGallery = () => {
                 <div className="overflow-hidden bg-[#F4EFEA] rounded-sm relative">
                   {renderPhotoContent(photo)}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 text-[#2A2525] font-hand text-base px-3 py-1 rounded-full shadow-sm">
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/95 text-[#2A2525] font-body text-xs font-bold px-3 py-1 rounded-full shadow-sm">
                       Ver foto 🔍
                     </span>
                   </div>
@@ -156,7 +156,7 @@ export const Scene05ScrapbookGallery = () => {
                   <p className="font-hand text-lg sm:text-xl font-bold text-[#2A2525] leading-snug">
                     {photo.caption}
                   </p>
-                  <div className="flex items-center justify-between mt-1 pt-1 border-t border-dashed border-[#E9B872]/40 text-xs font-hand text-[#8C8282]">
+                  <div className="flex items-center justify-between mt-1 pt-1 border-t border-dashed border-[#E9B872]/40 text-xs font-body text-[#8C8282]">
                     <span>{photo.date}</span>
                     <span className="text-[#FF6B6B] font-bold">#{photo.tag}</span>
                   </div>

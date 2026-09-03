@@ -76,7 +76,7 @@ export const Scene06Memories = () => {
                       <h3 className="font-display text-xl sm:text-2xl font-bold text-[#2A2525]">
                         {mem.title}
                       </h3>
-                      <span className="font-hand text-sm px-2.5 py-0.5 rounded-full bg-[#FAF7F2] text-[#FF6B6B] font-bold border border-[#FF6B6B]/20 shrink-0">
+                      <span className="font-body text-xs px-2.5 py-1 rounded-full bg-[#FAF7F2] text-[#FF6B6B] font-bold border border-[#FF6B6B]/20 shrink-0">
                         {mem.tag}
                       </span>
                     </div>

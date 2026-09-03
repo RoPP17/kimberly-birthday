@@ -43,7 +43,7 @@ export const Scene01Intro = ({ onStart }) => {
       <div className="max-w-md w-full flex flex-col items-center gap-6 z-10">
         {/* Paso 1: Saludo inicial */}
         <h1
-          className={`font-hand text-4xl sm:text-5xl font-bold text-[#2A2525] transition-all duration-700 ${
+          className={`font-display text-4xl sm:text-5xl font-bold text-[#2A2525] tracking-tight transition-all duration-700 ${
             step >= 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
@@ -52,7 +52,7 @@ export const Scene01Intro = ({ onStart }) => {
 
         {/* Paso 2: Pausa dramática */}
         <p
-          className={`font-body text-lg sm:text-xl text-[#685E5E] transition-all duration-700 delay-100 ${
+          className={`font-body text-base sm:text-lg text-[#685E5E] transition-all duration-700 delay-100 ${
             step >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
@@ -61,26 +61,26 @@ export const Scene01Intro = ({ onStart }) => {
 
         {/* Paso 3: Revelación del gancho */}
         <p
-          className={`font-display italic text-xl sm:text-2xl text-[#FF6B6B] font-medium max-w-xs transition-all duration-700 ${
+          className={`font-display italic text-xl sm:text-2xl text-[#FF6B6B] font-semibold max-w-sm transition-all duration-700 ${
             step >= 3 ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
         >
           {birthdayConfig.intro.hookText}
         </p>
 
-        {/* Botón de desbloqueo e inicio de audio */}
+        {/* Botón de inicio */}
         <div
-          className={`mt-4 flex flex-col items-center gap-3 transition-all duration-700 ${
+          className={`mt-4 flex flex-col items-center gap-2 transition-all duration-700 ${
             step >= 3 ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-6 pointer-events-none'
           }`}
         >
           <button
             onClick={handleOpen}
-            className="btn-handcrafted text-xl px-8 py-4 shadow-lg hover:shadow-xl active:scale-95"
+            className="btn-handcrafted text-base sm:text-lg px-8 py-3.5 shadow-lg active:scale-95"
           >
             {birthdayConfig.intro.buttonText}
           </button>
-          <span className="font-hand text-base text-[#8C8282] tracking-wide">
+          <span className="font-body text-xs text-[#8C8282]">
             {birthdayConfig.intro.audioNotice}
           </span>
         </div>

@@ -130,7 +130,7 @@ export const Scene08HandwrittenLetter = ({ onLetterOpenStateChange }) => {
             {/* Barra superior de controles de lectura */}
             <div className="flex items-center justify-between pb-3 mb-3 border-b border-dashed border-[#2A2525]/15">
               <div className="flex items-center gap-2">
-                <span className="font-hand text-sm sm:text-base font-bold text-[#2A2525]">
+                <span className="font-body text-xs sm:text-sm font-bold text-[#2A2525]">
                   Página {currentPage + 1} de {pages.length}
                 </span>
                 {/* Controles de Zoom */}
@@ -143,7 +143,7 @@ export const Scene08HandwrittenLetter = ({ onLetterOpenStateChange }) => {
 
               <button
                 onClick={handleCloseEnvelope}
-                className="font-hand text-sm px-3 py-1 rounded-full bg-[#FAF4EF] hover:bg-[#FF6B6B] hover:text-white transition-colors text-[#2A2525] border border-[#2A2525]/15"
+                className="font-body text-xs font-semibold px-3 py-1 rounded-full bg-[#FAF4EF] hover:bg-[#FF6B6B] hover:text-white transition-colors text-[#2A2525] border border-[#2A2525]/15"
               >
                 Cerrar carta ✕
               </button>
