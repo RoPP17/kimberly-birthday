@@ -260,7 +260,15 @@ export const birthdayConfig = {
     closingNote: "Disfruta mucho tu día, ríete hasta que te duela el estómago... y guárdame un pedacito de pastel.",
     signOff: "Con cariño. ✨",
     credits: "Hecho especialmente para ti."
-  }
+  },
+
+  // Easter eggs interactivos
+  easterEggs: [
+    { id: 'egg-star', message: '¡Encontraste una estrella secreta! Que todos tus deseos se cumplan ✨' },
+    { id: 'egg-cupcake', message: '¡Un deseo extra para ti! 🎂' },
+    { id: 'egg-photo', message: '¡Recuerdo desbloqueado! 📸' },
+    { id: 'egg-stamp', message: '¡Sello postal de amistad enviado! ✉️' }
+  ]
 };
 
 export default birthdayConfig;

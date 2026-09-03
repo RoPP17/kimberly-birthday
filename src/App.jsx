@@ -13,6 +13,7 @@ import SceneWish from './sections/SceneWish/SceneWish';
 import Scene04PersonalMessage from './sections/Scene04PersonalMessage/Scene04PersonalMessage';
 import Scene07SurpriseCupcake from './sections/Scene07SurpriseCupcake/Scene07SurpriseCupcake';
 import Scene09FinalCelebration from './sections/Scene09FinalCelebration/Scene09FinalCelebration';
+import ErrorBoundary from './components/common/ErrorBoundary';
 
 export function App() {
   const [hasStarted, setHasStarted] = useState(false);
@@ -55,54 +56,74 @@ export function App() {
             <main className="w-full max-w-[480px] flex flex-col items-center gap-10 pb-48">
               
               {/* 1. Cortometraje Cómico */}
-              <div id="scene-comic" ref={comicRef} className="w-full scroll-mt-6">
-                <Scene02ComicVideo onComplete={handleComicComplete} />
-              </div>
+              <ErrorBoundary>
+                <div id="scene-comic" ref={comicRef} className="w-full scroll-mt-6">
+                  <Scene02ComicVideo onComplete={handleComicComplete} />
+                </div>
+              </ErrorBoundary>
 
               {/* 2. Gran Revelación de Cumpleaños */}
-              <div id="scene-reveal" ref={revealRef} className="w-full scroll-mt-6">
-                <Scene03BirthdayReveal />
-              </div>
+              <ErrorBoundary>
+                <div id="scene-reveal" ref={revealRef} className="w-full scroll-mt-6">
+                  <Scene03BirthdayReveal />
+                </div>
+              </ErrorBoundary>
 
               {/* 3. Sobre y Carta Manuscrita Real (Ubicada arriba) */}
-              <div id="scene-letter" className="w-full scroll-mt-6">
-                <Scene08HandwrittenLetter onLetterOpenStateChange={setIsLetterReading} />
-              </div>
+              <ErrorBoundary>
+                <div id="scene-letter" className="w-full scroll-mt-6">
+                  <Scene08HandwrittenLetter onLetterOpenStateChange={setIsLetterReading} />
+                </div>
+              </ErrorBoundary>
 
               {/* 4. Galería de Fotografías */}
-              <div id="scene-photos" className="w-full scroll-mt-6">
-                <Scene05ScrapbookGallery />
-              </div>
+              <ErrorBoundary>
+                <div id="scene-photos" className="w-full scroll-mt-6">
+                  <Scene05ScrapbookGallery />
+                </div>
+              </ErrorBoundary>
 
               {/* 5. Video After Effects con su nombre */}
-              <div id="scene-video" className="w-full scroll-mt-6">
-                <SceneVideo />
-              </div>
+              <ErrorBoundary>
+                <div id="scene-video" className="w-full scroll-mt-6">
+                  <SceneVideo />
+                </div>
+              </ErrorBoundary>
 
               {/* 6. Recuerdos */}
-              <div id="scene-memories" className="w-full scroll-mt-6">
-                <Scene06Memories />
-              </div>
+              <ErrorBoundary>
+                <div id="scene-memories" className="w-full scroll-mt-6">
+                  <Scene06Memories />
+                </div>
+              </ErrorBoundary>
 
               {/* 7. Pedir un deseo */}
-              <div id="scene-wish" className="w-full scroll-mt-6">
-                <SceneWish />
-              </div>
+              <ErrorBoundary>
+                <div id="scene-wish" className="w-full scroll-mt-6">
+                  <SceneWish />
+                </div>
+              </ErrorBoundary>
 
               {/* 8. Mensaje Personal Sincero ("Para ti, siempre", ubicado abajo) */}
-              <div id="scene-message" className="w-full scroll-mt-6">
-                <Scene04PersonalMessage />
-              </div>
+              <ErrorBoundary>
+                <div id="scene-message" className="w-full scroll-mt-6">
+                  <Scene04PersonalMessage />
+                </div>
+              </ErrorBoundary>
 
               {/* 9. Sorpresa: Cupcake y Vela */}
-              <div id="scene-cupcake" className="w-full scroll-mt-6">
-                <Scene07SurpriseCupcake />
-              </div>
+              <ErrorBoundary>
+                <div id="scene-cupcake" className="w-full scroll-mt-6">
+                  <Scene07SurpriseCupcake />
+                </div>
+              </ErrorBoundary>
 
               {/* 10. Cierre y Celebración */}
-              <div id="scene-final" className="w-full scroll-mt-6">
-                <Scene09FinalCelebration />
-              </div>
+              <ErrorBoundary>
+                <div id="scene-final" className="w-full scroll-mt-6">
+                  <Scene09FinalCelebration />
+                </div>
+              </ErrorBoundary>
 
               {/* Espaciador inferior generoso para permitir seguir bajando cómodamente */}
               <div className="w-full h-36" aria-hidden="true" />
