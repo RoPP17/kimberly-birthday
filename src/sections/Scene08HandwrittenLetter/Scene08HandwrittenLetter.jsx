@@ -62,15 +62,9 @@ export const Scene08HandwrittenLetter = ({ onLetterOpenStateChange }) => {
   return (
     <section className="py-12 px-4 flex flex-col items-center justify-center select-none w-full">
       <div className="max-w-lg w-full text-center mb-6">
-        <span className="hand-badge text-xs sm:text-sm">
-          {letter.badge}
-        </span>
-        <h2 className="font-display text-2xl sm:text-3xl font-bold text-[#2A2525] mt-2">
+        <h2 className="font-display text-2xl sm:text-3xl font-bold text-[#2A2525]">
           {letter.envelopeTitle}
         </h2>
-        <p className="font-body text-xs sm:text-sm text-[#685E5E] max-w-sm mx-auto mt-1">
-          {letter.envelopeSubtitle}
-        </p>
       </div>
 
       {/* ==========================================

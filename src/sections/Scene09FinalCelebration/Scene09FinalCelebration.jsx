@@ -49,21 +49,17 @@ export const Scene09FinalCelebration = ({ onReplay }) => {
         />
       </div>
 
-      <div className="max-w-xl mx-auto space-y-8 z-10 relative">
-        <span className="hand-badge text-xs sm:text-sm">
-          {content.badge}
-        </span>
-
+      <div className="max-w-xl mx-auto space-y-6 z-10 relative">
         <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#2A2525]">
           {content.title}
         </h2>
 
         {/* Cita reflexiva */}
-        <div className="bg-[#FFFFFF] p-8 rounded-2xl border border-[#2A2525]/10 shadow-lg relative hand-border">
+        <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-2xl border border-[#2A2525]/10 shadow-lg relative hand-border">
           <p className="font-display italic text-xl sm:text-2xl text-[#FF6B6B] leading-snug">
             {content.quote}
           </p>
-          <p className="font-body text-base sm:text-lg text-[#685E5E] mt-4 leading-relaxed">
+          <p className="font-body text-base text-[#685E5E] mt-4 leading-relaxed">
             {content.closingNote}
           </p>
           <p className="font-hand text-3xl sm:text-4xl font-bold text-[#2A2525] mt-6">
@@ -71,23 +67,14 @@ export const Scene09FinalCelebration = ({ onReplay }) => {
           </p>
         </div>
 
-        {/* Botones de acción final */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        {/* Botón de confeti final */}
+        <div className="flex items-center justify-center pt-2">
           <button
             onClick={handleFinalBurst}
-            className="btn-handcrafted text-lg py-3 px-8 shadow-lg hover:scale-105"
+            className="btn-handcrafted text-base sm:text-lg py-3 px-8 shadow-lg hover:scale-105"
           >
             ¡Celebrar una vez más! 🎉
           </button>
-
-          {onReplay && (
-            <button
-              onClick={onReplay}
-              className="btn-handcrafted btn-secondary text-base py-2.5 px-6"
-            >
-              {content.replayButton}
-            </button>
-          )}
         </div>
 
         {/* Crédito discreto y cariñoso */}

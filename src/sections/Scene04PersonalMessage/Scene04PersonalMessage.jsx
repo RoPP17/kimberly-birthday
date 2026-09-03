@@ -15,15 +15,8 @@ export const Scene04PersonalMessage = () => {
         </div>
 
         {/* Tarjeta estilo hoja de papel artesanal */}
-        <div className="bg-[#FFFFFF] paper-sheet p-8 sm:p-12 rounded-2xl border border-[#2A2525]/10 shadow-xl relative hand-border-soft">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="hand-badge text-xs sm:text-sm">
-              {content.badge}
-            </span>
-            <DoodleSparkle size={18} color="#FF6B6B" />
-          </div>
-
-          <h2 className="font-display text-2xl sm:text-3xl font-bold text-[#2A2525] mb-6">
+        <div className="bg-[#FFFFFF] paper-sheet p-6 sm:p-10 rounded-2xl border border-[#2A2525]/10 shadow-xl relative hand-border-soft">
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-[#2A2525] mb-5">
             {content.title}
           </h2>
 

@@ -284,22 +284,33 @@ class SoundEngine {
     this.init();
     this.isPlayingBgm = true;
 
-    // Primero intentar reproducir archivo MP3 local si existe en /assets/audio/
+    // Intentar reproducir archivo MP3 local si existe en /assets/audio/
     if (!this.bgmAudioElement) {
-      try {
-        const audio = new Audio('./assets/audio/musica-fondo.mp3');
+      const candidates = [
+        './assets/audio/musica.mp3',
+        './assets/audio/musica-fondo.mp3',
+        './assets/audio/cancion.mp3'
+      ];
+
+      const tryPlayCandidate = (index) => {
+        if (index >= candidates.length) {
+          this.runProceduralBgm();
+          return;
+        }
+
+        const audio = new Audio(candidates[index]);
         audio.loop = true;
-        audio.volume = 0.35;
+        audio.volume = 0.45;
+
         audio.play().then(() => {
           this.bgmAudioElement = audio;
           this.notify();
         }).catch(() => {
-          // Si no existe el archivo MP3, usar el sintetizador procedural Lo-Fi
-          this.runProceduralBgm();
+          tryPlayCandidate(index + 1);
         });
-      } catch (e) {
-        this.runProceduralBgm();
-      }
+      };
+
+      tryPlayCandidate(0);
     } else {
       this.bgmAudioElement.play().catch(() => this.runProceduralBgm());
     }

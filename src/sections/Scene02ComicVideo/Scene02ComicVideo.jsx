@@ -13,7 +13,7 @@ export const Scene02ComicVideo = ({ onComplete }) => {
   const timerRef = useRef(null);
   const progressIntervalRef = useRef(null);
 
-  // Reproducir efectos sonoros sincronizados con el beat
+  // Reproducir efectos sonoros sincronizados con la acción
   useEffect(() => {
     if (!current) return;
     if (current.sound === 'bite') {
@@ -28,11 +28,11 @@ export const Scene02ComicVideo = ({ onComplete }) => {
     }
   }, [currentBeat]);
 
-  // Manejo del temporizador con progreso suave
+  // Manejo de avance suave
   useEffect(() => {
     if (!isPlaying || isFinished) return;
 
-    const duration = current.timeMs || 4000;
+    const duration = current.timeMs || 3500;
     const intervalMs = 40;
     const step = (intervalMs / duration) * 100;
 
@@ -102,51 +102,57 @@ export const Scene02ComicVideo = ({ onComplete }) => {
   };
 
   // ==========================================
-  // ESCENOGRAFÍA VECTORIAL CINEMATOGRÁFICA
+  // DIBUJOS 100% VECTORIALES ARTESANALES (CERO EMOJIS)
   // ==========================================
   const renderVisual = (doodle) => {
     switch (doodle) {
       case 'thinking':
         return (
-          <svg viewBox="0 0 200 200" className="w-40 h-40 sm:w-48 sm:h-48 mx-auto">
-            <circle cx="85" cy="115" r="38" fill="#FFFDF9" stroke="#2A2525" strokeWidth="2.5" />
-            <circle cx="75" cy="108" r="3.5" fill="#2A2525" />
-            <circle cx="95" cy="108" r="3.5" fill="#2A2525" />
-            <path d="M76 130 Q85 138 94 130" stroke="#2A2525" strokeWidth="2.2" fill="none" strokeLinecap="round" />
-            <circle cx="125" cy="70" r="5" fill="#F8B195" />
-            <circle cx="138" cy="55" r="8" fill="#F8B195" />
-            <ellipse cx="152" cy="38" rx="28" ry="18" fill="#FFF" stroke="#2A2525" strokeWidth="2" />
-            <text x="152" y="42" textAnchor="middle" fontSize="11" fontFamily="Caveat" fontWeight="bold" fill="#FF6B6B">
-              ¡Kimberly! 🎂
+          <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto">
+            {/* Cara pensativa */}
+            <circle cx="85" cy="115" r="36" fill="#FFFDF9" stroke="#2A2525" strokeWidth="2.5" />
+            <circle cx="76" cy="108" r="3.5" fill="#2A2525" />
+            <circle cx="94" cy="108" r="3.5" fill="#2A2525" />
+            <path d="M78 128 Q85 132 92 128" stroke="#2A2525" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+            <ellipse cx="68" cy="116" rx="5" ry="3" fill="#F8B195" opacity="0.6" />
+            <ellipse cx="102" cy="116" rx="5" ry="3" fill="#F8B195" opacity="0.6" />
+            {/* Burbujas de pensamiento */}
+            <circle cx="120" cy="72" r="5" fill="#E9B872" />
+            <circle cx="132" cy="58" r="7" fill="#E9B872" />
+            <rect x="110" y="24" width="76" height="28" rx="14" fill="#FFFFFF" stroke="#2A2525" strokeWidth="2" />
+            <text x="148" y="42" textAnchor="middle" fontSize="11" fontFamily="Caveat" fontWeight="bold" fill="#FF6B6B">
+              ¡Kimberly! ✨
             </text>
           </svg>
         );
 
       case 'apple':
         return (
-          <svg viewBox="0 0 200 200" className="w-40 h-40 sm:w-48 sm:h-48 mx-auto animate-float">
+          <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto animate-float">
+            {/* Manzana roja con brillo */}
             <path
-              d="M100 50 C80 20, 45 40, 50 85 C55 130, 85 165, 100 165 C115 165, 145 130, 150 85 C155 40, 120 20, 100 50 Z"
+              d="M100 52 C80 22, 45 42, 50 88 C55 132, 85 165, 100 165 C115 165, 145 132, 150 88 C155 42, 120 22, 100 52 Z"
               fill="#FF6B6B"
               stroke="#2A2525"
-              strokeWidth="3"
+              strokeWidth="2.8"
             />
-            <path d="M68 65 C62 75, 62 95, 66 105" stroke="#FFFFFF" strokeWidth="3.5" strokeLinecap="round" fill="none" />
-            <path d="M100 50 Q105 30 115 20" stroke="#684A2A" strokeWidth="3.5" strokeLinecap="round" fill="none" />
-            <path d="M108 30 Q130 20 135 35 Q115 42 108 30 Z" fill="#A2D2BF" stroke="#2A2525" strokeWidth="2" />
+            <path d="M68 68 C62 78, 62 98, 66 108" stroke="#FFFFFF" strokeWidth="3.5" strokeLinecap="round" fill="none" />
+            <path d="M100 52 Q105 32 114 22" stroke="#684A2A" strokeWidth="3" strokeLinecap="round" fill="none" />
+            <path d="M106 32 Q128 22 134 36 Q114 44 106 32 Z" fill="#A2D2BF" stroke="#2A2525" strokeWidth="2" />
           </svg>
         );
 
       case 'bite_approach':
         return (
-          <svg viewBox="0 0 200 200" className="w-40 h-40 sm:w-48 sm:h-48 mx-auto">
+          <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto">
+            {/* Personaje con boca abierta dirigiéndose a la manzana */}
             <g transform="translate(-15, 0)">
-              <circle cx="70" cy="100" r="40" fill="#FFFDF9" stroke="#2A2525" strokeWidth="2.5" />
-              <circle cx="62" cy="90" r="3.5" fill="#2A2525" />
-              <circle cx="82" cy="90" r="3.5" fill="#2A2525" />
-              <ellipse cx="90" cy="115" rx="14" ry="18" fill="#2A2525" />
+              <circle cx="70" cy="100" r="38" fill="#FFFDF9" stroke="#2A2525" strokeWidth="2.5" />
+              <circle cx="62" cy="90" r="3" fill="#2A2525" />
+              <circle cx="78" cy="90" r="3" fill="#2A2525" />
+              <path d="M72 104 Q88 108 85 125 Q70 120 72 104 Z" fill="#2A2525" stroke="#2A2525" strokeWidth="1.5" />
             </g>
-            <g transform="translate(45, 0)">
+            <g transform="translate(40, 0)">
               <path
                 d="M100 65 C85 45, 60 55, 65 90 C70 125, 90 150, 100 150 C110 150, 130 125, 135 90 C140 55, 115 45, 100 65 Z"
                 fill="#FF6B6B"
@@ -159,37 +165,48 @@ export const Scene02ComicVideo = ({ onComplete }) => {
 
       case 'brackets_alert':
         return (
-          <div className="w-40 h-40 sm:w-48 sm:h-48 mx-auto flex flex-col items-center justify-center p-3 bg-[#FFF3F3] border-3 border-dashed border-[#FF6B6B] rounded-2xl animate-shake">
-            <span className="text-4xl sm:text-5xl animate-bounce">🦷 🚫 🍏</span>
-            <span className="font-display font-black text-sm text-[#FF6B6B] mt-2 text-center tracking-wide">
-              ¡ALERTA ODONTOLÓGICA!
-            </span>
-            <span className="font-body text-xs text-[#685E5E] text-center mt-1">
-              "Mordisco a manzana entera estrictamente prohibido"
-            </span>
-          </div>
+          <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto animate-shake">
+            {/* Diente gigante con brackets metálicos y alambre */}
+            <path
+              d="M70 50 C55 50, 48 80, 52 115 C56 145, 65 170, 78 170 C88 170, 92 145, 100 145 C108 145, 112 170, 122 170 C135 170, 144 145, 148 115 C152 80, 145 50, 130 50 C118 50, 110 65, 100 65 C90 65, 82 50, 70 50 Z"
+              fill="#FFFFFF"
+              stroke="#2A2525"
+              strokeWidth="2.8"
+            />
+            {/* Alambre metálico horizontal */}
+            <path d="M50 105 L150 105" stroke="#8C8282" strokeWidth="2.5" strokeLinecap="round" />
+            {/* Brackets cuadrados plateados */}
+            <rect x="68" y="98" width="14" height="14" rx="2" fill="#D9E2EC" stroke="#2A2525" strokeWidth="1.5" />
+            <rect x="93" y="98" width="14" height="14" rx="2" fill="#D9E2EC" stroke="#2A2525" strokeWidth="1.5" />
+            <rect x="118" y="98" width="14" height="14" rx="2" fill="#D9E2EC" stroke="#2A2525" strokeWidth="1.5" />
+            {/* Círculo de prohibido */}
+            <circle cx="100" cy="105" r="45" stroke="#FF6B6B" strokeWidth="4" fill="none" opacity="0.85" />
+            <line x1="68" y1="73" x2="132" y2="137" stroke="#FF6B6B" strokeWidth="4" strokeLinecap="round" />
+          </svg>
         );
 
       case 'knife':
         return (
-          <svg viewBox="0 0 200 200" className="w-40 h-40 sm:w-48 sm:h-48 mx-auto">
-            <g transform="rotate(-25 100 100)">
-              <rect x="35" y="90" width="42" height="18" rx="3" fill="#684A2A" stroke="#2A2525" strokeWidth="2.5" />
-              <path d="M78 88 L165 88 C178 88 182 108 165 114 L78 114 Z" fill="#D9E2EC" stroke="#2A2525" strokeWidth="2.5" />
-              <line x1="88" y1="95" x2="158" y2="95" stroke="#FFF" strokeWidth="2" strokeLinecap="round" />
+          <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto">
+            {/* Cuchillo cortando rodajas */}
+            <g transform="rotate(-20 100 90)">
+              <rect x="30" y="85" width="45" height="18" rx="4" fill="#684A2A" stroke="#2A2525" strokeWidth="2.5" />
+              <path d="M75 83 L165 83 C178 83 182 105 165 112 L75 112 Z" fill="#D9E2EC" stroke="#2A2525" strokeWidth="2.5" />
+              <line x1="85" y1="90" x2="155" y2="90" stroke="#FFF" strokeWidth="2" strokeLinecap="round" />
             </g>
+            <ellipse cx="140" cy="145" rx="22" ry="14" fill="#FF8E8E" stroke="#2A2525" strokeWidth="2" />
           </svg>
         );
 
       case 'cut_finger':
         return (
-          <svg viewBox="0 0 200 200" className="w-40 h-40 sm:w-48 sm:h-48 mx-auto animate-shake">
+          <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto animate-shake">
+            {/* Dedo con corte y gotita */}
             <rect x="80" y="65" width="40" height="90" rx="20" fill="#F8B195" stroke="#2A2525" strokeWidth="2.5" />
             <path d="M88 72 Q98 68 108 72 L108 84 L88 84 Z" fill="#FFF" stroke="#2A2525" strokeWidth="1.5" />
-            <line x1="86" y1="105" x2="114" y2="115" stroke="#FF6B6B" strokeWidth="3" strokeLinecap="round" />
-            <circle cx="125" cy="120" r="6" fill="#FF6B6B" className="animate-ping" />
-            <circle cx="125" cy="120" r="5" fill="#FF6B6B" />
-            <text x="135" y="95" fontSize="20" fontFamily="Caveat" fontWeight="bold" fill="#FF6B6B">
+            <line x1="86" y1="105" x2="114" y2="115" stroke="#FF6B6B" strokeWidth="3.5" strokeLinecap="round" />
+            <circle cx="125" cy="118" r="5" fill="#FF6B6B" />
+            <text x="135" y="95" fontSize="22" fontFamily="Caveat" fontWeight="bold" fill="#FF6B6B">
               ¡AUUCH!
             </text>
           </svg>
@@ -197,36 +214,67 @@ export const Scene02ComicVideo = ({ onComplete }) => {
 
       case 'lemon_fall':
         return (
-          <svg viewBox="0 0 200 200" className="w-40 h-40 sm:w-48 sm:h-48 mx-auto animate-float">
+          <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto animate-float">
+            {/* Medio limón cayendo */}
             <ellipse cx="100" cy="70" rx="42" ry="34" fill="#FEE08B" stroke="#2A2525" strokeWidth="2.5" />
             <circle cx="100" cy="70" r="28" fill="#FFF59D" stroke="#E9B872" strokeWidth="1.5" />
-            <path d="M100 45 L100 95 M75 70 L125 70 M82 52 L118 88 M82 88 L118 52" stroke="#E9B872" strokeWidth="1.8" />
-            <circle cx="98" cy="125" r="4" fill="#FEE08B" />
-            <circle cx="102" cy="150" r="5" fill="#FEE08B" />
+            <path d="M100 45 L100 95 M75 70 L125 70 M82 52 L118 88 M82 88 L118 52" stroke="#E9B872" strokeWidth="2" strokeLinecap="round" />
+            {/* Gotas cayendo hacia el dedo */}
+            <circle cx="98" cy="122" r="4.5" fill="#FEE08B" stroke="#E9B872" strokeWidth="1" />
+            <circle cx="102" cy="148" r="5" fill="#FEE08B" stroke="#E9B872" strokeWidth="1" />
           </svg>
         );
 
       case 'lemon_scream':
         return (
-          <div className="w-40 h-40 sm:w-48 sm:h-48 mx-auto flex flex-col items-center justify-center p-3 bg-[#FFE8E8] border-4 border-[#FF6B6B] rounded-full animate-shake">
-            <span className="text-5xl sm:text-6xl animate-pulse">🔥🍋😱🔥</span>
-            <span className="font-display font-black text-sm sm:text-base text-[#FF6B6B] mt-2">
-              ¡ARDOR 1000%!
-            </span>
-          </div>
+          <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto animate-shake">
+            {/* Cara gritando de dolor por el limón con vapor saliendo */}
+            <circle cx="100" cy="105" r="44" fill="#FFF0F0" stroke="#FF6B6B" strokeWidth="3" />
+            {/* Ojos saltones en X o espirales */}
+            <path d="M80 92 L94 106 M94 92 L80 106" stroke="#FF6B6B" strokeWidth="3" strokeLinecap="round" />
+            <path d="M106 92 L120 106 M120 92 L106 106" stroke="#FF6B6B" strokeWidth="3" strokeLinecap="round" />
+            {/* Boca gritando */}
+            <ellipse cx="100" cy="126" rx="16" ry="12" fill="#FF6B6B" />
+            {/* Humo/fuego dibujado a los costados */}
+            <path d="M48 95 Q38 85 45 75 Q35 65 48 55" stroke="#FF6B6B" strokeWidth="2" fill="none" strokeLinecap="round" />
+            <path d="M152 95 Q162 85 155 75 Q165 65 152 55" stroke="#FF6B6B" strokeWidth="2" fill="none" strokeLinecap="round" />
+            <text x="100" y="42" textAnchor="middle" fontSize="15" fontFamily="Caveat" fontWeight="bold" fill="#FF6B6B">
+              ¡ARDOR TOTAL!
+            </text>
+          </svg>
         );
 
-      case 'blackout':
+      case 'pause_silence':
         return (
-          <div className="w-full h-40 sm:h-48 flex items-center justify-center">
-            <div className="w-3 h-3 bg-[#2A2525]/30 rounded-full animate-ping" />
-          </div>
+          <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto">
+            {/* Personaje de pie con curita en el dedo, gota de sudor, silencio incómodo */}
+            <circle cx="100" cy="95" r="36" fill="#FFFDF9" stroke="#2A2525" strokeWidth="2.5" />
+            <circle cx="90" cy="90" r="3" fill="#2A2525" />
+            <circle cx="110" cy="90" r="3" fill="#2A2525" />
+            <line x1="94" y1="112" x2="106" y2="112" stroke="#2A2525" strokeWidth="2" strokeLinecap="round" />
+            {/* Gotita de sudor incómoda */}
+            <path d="M125 80 Q122 74 125 70 Q128 74 125 80 Z" fill="#A2D2BF" stroke="#2A2525" strokeWidth="1" />
+            {/* Dedo con curita blanca */}
+            <rect x="92" y="145" width="16" height="32" rx="8" fill="#F8B195" stroke="#2A2525" strokeWidth="2" />
+            <rect x="90" y="153" width="20" height="12" rx="2" fill="#FFFFFF" stroke="#2A2525" strokeWidth="1.5" />
+            <line x1="100" y1="155" x2="100" y2="163" stroke="#FF6B6B" strokeWidth="1.5" />
+          </svg>
         );
 
       case 'punchline':
         return (
-          <div className="w-full h-44 sm:h-52 flex flex-col items-center justify-center p-4">
-            <span className="text-4xl animate-float mb-2">🍎✨</span>
+          <div className="w-full min-h-[160px] flex flex-col items-center justify-center p-2">
+            <svg viewBox="0 0 80 80" className="w-16 h-16 mx-auto mb-2 animate-float">
+              <path
+                d="M40 22 C32 10, 18 18, 20 36 C22 54, 34 68, 40 68 C46 68, 58 54, 60 36 C62 18, 48 10, 40 22 Z"
+                fill="#FF6B6B"
+                stroke="#2A2525"
+                strokeWidth="2"
+              />
+              <path d="M40 22 Q42 14 46 10" stroke="#684A2A" strokeWidth="2" strokeLinecap="round" fill="none" />
+              {/* Curita en la manzana */}
+              <rect x="30" y="38" width="20" height="8" rx="2" fill="#FFFFFF" stroke="#2A2525" strokeWidth="1.2" transform="rotate(-15 40 42)" />
+            </svg>
             <p className="font-display italic text-2xl sm:text-3xl text-[#FF6B6B] font-bold text-center leading-snug drop-shadow-sm">
               «{current.text}»
             </p>
@@ -236,23 +284,27 @@ export const Scene02ComicVideo = ({ onComplete }) => {
       case 'sigh':
       default:
         return (
-          <svg viewBox="0 0 200 200" className="w-40 h-40 sm:w-48 sm:h-48 mx-auto">
-            <circle cx="100" cy="100" r="44" fill="#FFFDF9" stroke="#2A2525" strokeWidth="2.5" />
-            <path d="M78 88 L90 100 M90 88 L78 100" stroke="#2A2525" strokeWidth="2" strokeLinecap="round" />
-            <path d="M110 88 L122 100 M122 88 L110 100" stroke="#2A2525" strokeWidth="2" strokeLinecap="round" />
-            <ellipse cx="100" cy="122" rx="14" ry="6" fill="#F8B195" stroke="#2A2525" strokeWidth="1.8" />
-            <ellipse cx="100" cy="58" rx="20" ry="10" fill="#A2D2BF" stroke="#2A2525" strokeWidth="1.8" />
+          <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto">
+            <circle cx="100" cy="100" r="40" fill="#FFFDF9" stroke="#2A2525" strokeWidth="2.5" />
+            {/* Ojos cerrados aliviados */}
+            <path d="M82 96 Q90 102 98 96" stroke="#2A2525" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+            <path d="M102 96 Q110 102 118 96" stroke="#2A2525" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+            <path d="M92 116 Q100 122 108 116" stroke="#2A2525" strokeWidth="2" fill="none" strokeLinecap="round" />
+            {/* Pequeña nubecita de suspiro */}
+            <path d="M125 125 Q135 120 145 125 Q150 132 142 136 Q132 136 125 125 Z" fill="#E9F2F9" stroke="#2A2525" strokeWidth="1.5" />
+            <text x="100" y="45" textAnchor="middle" fontSize="22" fontFamily="Fraunces" fontStyle="italic" fontWeight="bold" fill="#685E5E">
+              Uf.
+            </text>
           </svg>
         );
     }
   };
 
   return (
-    <section className="w-full max-w-xl mx-auto py-8 px-4 select-none">
-      {/* Contenedor del teatro del cortometraje */}
-      <div className="w-full bg-[#FFFFFF] rounded-2xl border-2 border-[#2A2525]/15 shadow-2xl p-6 sm:p-8 relative hand-border-soft overflow-hidden">
+    <section className="w-full py-4 select-none">
+      <div className="w-full bg-[#FFFFFF] rounded-2xl border border-[#2A2525]/15 shadow-xl p-5 sm:p-7 relative hand-border-soft overflow-hidden">
         
-        {/* Barra de progreso superior segmentada (11 beats) */}
+        {/* Barra de progreso segmentada */}
         <div className="flex gap-1.5 mb-4">
           {beats.map((beat, idx) => {
             const isPast = idx < currentBeat;
@@ -273,74 +325,74 @@ export const Scene02ComicVideo = ({ onComplete }) => {
           })}
         </div>
 
-        {/* Badge del cortometraje */}
-        <div className="flex items-center justify-between mb-4">
-          <span className="font-body text-xs font-bold text-[#FF6B6B] uppercase tracking-wider bg-[#FFF0F0] px-3 py-1 rounded-full border border-[#FF6B6B]/25">
+        {/* Badge e indicador */}
+        <div className="flex items-center justify-between mb-3">
+          <span className="font-body text-xs font-bold text-[#FF6B6B] uppercase tracking-wider bg-[#FFF0F0] px-3 py-1 rounded-full border border-[#FF6B6B]/20">
             {birthdayConfig.comic.badge}
           </span>
           <span className="font-body text-xs text-[#8C8282] font-semibold">
-            {currentBeat + 1} de {beats.length}
+            {currentBeat + 1} / {beats.length}
           </span>
         </div>
 
-        {/* Escenario visual central */}
-        <div className="min-h-[200px] flex items-center justify-center my-2">
+        {/* Escenario del dibujo */}
+        <div className="min-h-[170px] flex items-center justify-center my-2">
           {renderVisual(current.doodle)}
         </div>
 
-        {/* Bocadillo de pensamiento o remate (si no es blackout ni punchline) */}
+        {/* Diálogo del personaje */}
         {current.speech && current.doodle !== 'punchline' && (
-          <div className="bg-[#FAF7F2] p-3 rounded-xl border border-dashed border-[#E9B872] my-3 text-center">
+          <div className="bg-[#FAF7F2] p-2.5 rounded-xl border border-dashed border-[#E9B872] my-2 text-center">
             <p className="font-hand text-xl sm:text-2xl font-bold text-[#FF6B6B] leading-snug">
               {current.speech}
             </p>
           </div>
         )}
 
-        {/* Narración descriptiva (si no es punchline ni blackout) */}
+        {/* Narración */}
         {current.doodle !== 'punchline' && (
-          <p className="font-body text-sm sm:text-base text-[#2A2525] text-center min-h-[48px] px-2 flex items-center justify-center leading-relaxed">
+          <p className="font-body text-sm sm:text-base text-[#2A2525] text-center min-h-[44px] px-2 flex items-center justify-center leading-relaxed">
             {current.text}
           </p>
         )}
 
-        {/* Controles de reproducción cinemática */}
-        <div className="flex items-center justify-between mt-6 pt-4 border-t border-[#2A2525]/10">
-          <div className="flex items-center gap-1 sm:gap-2">
+        {/* Controles de reproducción */}
+        <div className="flex items-center justify-between mt-5 pt-3 border-t border-[#2A2525]/10">
+          <div className="flex items-center gap-1.5">
             <button
               onClick={handleRestart}
-              className="px-2.5 py-1.5 text-xs font-body font-semibold text-[#685E5E] hover:text-[#2A2525] rounded-md hover:bg-[#FAF4EF] transition-colors"
-              title="Reiniciar cortometraje"
+              className="px-2 py-1 text-xs font-body font-semibold text-[#685E5E] hover:text-[#2A2525] rounded hover:bg-[#FAF4EF]"
+              title="Reiniciar"
             >
-              ⏮ Reiniciar
+              ⏮
             </button>
             <button
               onClick={handlePrev}
               disabled={currentBeat === 0}
-              className="px-2.5 py-1.5 text-xs font-body font-semibold text-[#685E5E] hover:text-[#2A2525] disabled:opacity-25 rounded-md hover:bg-[#FAF4EF] transition-colors"
+              className="px-2.5 py-1 text-xs font-body font-semibold text-[#685E5E] hover:text-[#2A2525] disabled:opacity-20 rounded hover:bg-[#FAF4EF]"
             >
-              ◀ Atrás
+              ◀
             </button>
             <button
               onClick={handleTogglePlay}
-              className="px-3 py-1.5 text-xs font-body font-bold text-[#FF6B6B] bg-[#FFF0F0] rounded-md border border-[#FF6B6B]/25 hover:bg-[#FFE8E8] transition-colors"
+              className="px-3 py-1 text-xs font-body font-bold text-[#FF6B6B] bg-[#FFF0F0] rounded-full border border-[#FF6B6B]/25 hover:bg-[#FFE8E8]"
             >
-              {isPlaying ? '⏸ Pausa' : '▶ Play'}
+              {isPlaying ? 'Pausa' : 'Play'}
             </button>
             <button
               onClick={handleNext}
               disabled={currentBeat >= beats.length - 1}
-              className="px-2.5 py-1.5 text-xs font-body font-semibold text-[#685E5E] hover:text-[#2A2525] disabled:opacity-25 rounded-md hover:bg-[#FAF4EF] transition-colors"
+              className="px-2.5 py-1 text-xs font-body font-semibold text-[#685E5E] hover:text-[#2A2525] disabled:opacity-20 rounded hover:bg-[#FAF4EF]"
             >
-              Adelantar ▶
+              ▶
             </button>
           </div>
 
-          {/* Botón de continuación: Solo aparece al terminar o en el suspiro final */}
+          {/* Botón de continuación: Solo aparece al terminar o en los beats finales */}
           {(currentBeat >= beats.length - 2 || isFinished) && (
             <button
               onClick={onComplete}
-              className="btn-handcrafted text-sm sm:text-base py-2 px-5 animate-bounce shadow-md"
+              className="btn-handcrafted text-sm py-2 px-5 animate-bounce shadow-md"
             >
               {birthdayConfig.comic.continueButton}
             </button>

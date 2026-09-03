@@ -1,7 +1,5 @@
 /**
  * CONFIGURACIÓN CENTRAL — EXPERIENCIA DE CUMPLEAÑOS DE KIMBERLY
- * 
- * Contenido narrativo, escenas, recuerdos, cartas y textos de autor.
  */
 
 export const birthdayConfig = {
@@ -14,103 +12,103 @@ export const birthdayConfig = {
   intro: {
     greeting: "Hey, Kimberly...",
     pauseText: "Antes de que sigas mirando...",
-    hookText: "tengo algo preparado especialmente para ti.",
-    buttonText: "Comenzar historia ✨",
-    audioNotice: "(Sube un poquito el volumen para escucharlo mejor)"
+    hookText: "tengo algo preparado para ti.",
+    buttonText: "Comenzar ✨",
+    audioNotice: "(Sube el volumen para escucharlo mejor)"
   },
 
   // Escena 02: Cortometraje animado ("La Manzana, los Brackets y el Limón")
   comic: {
-    badge: "CORTOMETRAJE CÓMICO • BASADO EN HECHOS REALES",
+    badge: "HISTORIA REAL",
     beats: [
       {
         id: 1,
-        timeMs: 4000,
-        text: "Todo comenzó hoy por la mañana... Estaba pensando en que hoy es tu cumpleaños.",
+        timeMs: 3800,
+        text: "Hoy por la mañana estaba pensando en que hoy es tu cumpleaños.",
         speech: "«Hoy cumple Kimberly... hay que hacer algo especial...»",
         doodle: "thinking",
         sound: null
       },
       {
         id: 2,
-        timeMs: 3600,
-        text: "Pero de repente... me dio un hambre tremenda. Y en la cocina vi una manzana roja perfecta.",
-        speech: "«Una manzana rápida para no desmayarme.»",
+        timeMs: 3400,
+        text: "Pero me dio un hambre tremenda. Y vi una manzana roja en la cocina.",
+        speech: "«Una manzanita rápida.»",
         doodle: "apple",
         sound: null
       },
       {
         id: 3,
-        timeMs: 3600,
-        text: "Fui con toda la intención de pegarle un mordisco crujiente...",
-        speech: "«¡A comer se ha dicho!... Espera...»",
+        timeMs: 3400,
+        text: "Fui directo a pegarle un mordisco con toda la emoción...",
+        speech: "«A comer... ¡espera!...»",
         doodle: "bite_approach",
         sound: null
       },
       {
         id: 4,
-        timeMs: 4200,
-        text: "RECORDÉ QUE TENGO BRACKETS. Prohibido morder manzanas enteras desde el día 1.",
-        speech: "«Si muerdo esto, desintegro tres brackets de un viaje.»",
+        timeMs: 3800,
+        text: "RECORDÉ QUE TENGO BRACKETS. Mordisco cancelado por ley odontológica.",
+        speech: "«Si muerdo esto, adiós brackets.»",
         doodle: "brackets_alert",
         sound: "bite"
       },
       {
         id: 5,
-        timeMs: 3800,
-        text: "Así que decidí actuar civilizadamente: buscar un cuchillo para cortarla en rodajas finas.",
-        speech: "«Ingeniería aplicada a la fruta.»",
+        timeMs: 3400,
+        text: "Decidí actuar como persona civilizada y buscar un cuchillo para cortarla.",
+        speech: "«A cortarla en rodajitas.»",
         doodle: "knife",
         sound: "slice"
       },
       {
         id: 6,
-        timeMs: 3800,
-        text: "Y por hacerme el chef profesional cortando rápido... ¡ZAS! Me corté un dedo.",
-        speech: "«¡AUUUCH! Dedo herido en combate.»",
+        timeMs: 3400,
+        text: "Y por hacerme el chef profesional... ¡ZAS! Me corté un dedo.",
+        speech: "«¡AUUUCH! Sangre inocente.»",
         doodle: "cut_finger",
         sound: "slice"
       },
       {
         id: 7,
-        timeMs: 4400,
-        text: "Fui a buscar con qué limpiarme... y tropecé con medio limón que estaba en la mesa.",
-        speech: "«No... por favor, universo, no...»",
+        timeMs: 4000,
+        text: "Fui por algo para limpiarme... y tropecé con medio limón que estaba en la mesa.",
+        speech: "«No... por favor, no...»",
         doodle: "lemon_fall",
         sound: null
       },
       {
         id: 8,
-        timeMs: 5000,
+        timeMs: 4500,
         text: "EL JUGO DE LIMÓN CAYÓ EXACTAMENTE EN EL CORTE. DOLOR GALÁCTICO.",
-        speech: "«¡¿POR QUÉ CON LIMÓN?! ¡¿QUÉ HICE YO?!»",
+        speech: "«¡¿POR QUÉ EL LIMÓN?! ¡¿QUÉ HICE YO?!»",
         doodle: "lemon_scream",
         sound: "scream"
       },
-      // CORTE DRAMÁTICO / SILENCIO
+      // Momento de respiración y vendaje (NO una pantalla en blanco)
       {
         id: 9,
-        timeMs: 3200,
+        timeMs: 3400,
         text: "...",
-        speech: "",
-        doodle: "blackout",
+        speech: "«Silencio dramático...»",
+        doodle: "pause_silence",
         sound: null
       },
-      // REMATE AFECTIVO INESPERADO
+      // Remate afectivo directo
       {
         id: 10,
-        timeMs: 5500,
+        timeMs: 5000,
         text: "Y no sabes cuánto me arde no poder estar hoy contigo.",
-        speech: "«De verdad.»",
+        speech: "",
         doodle: "punchline",
         sound: "sparkle"
       },
-      // SUSPIRO FINAL
+      // Suspiro final
       {
         id: 11,
-        timeMs: 4000,
+        timeMs: 3200,
         text: "Uf.",
-        speech: "«En fin... Ahora sí.»",
+        speech: "",
         doodle: "sigh",
         sound: null
       }
@@ -120,16 +118,15 @@ export const birthdayConfig = {
 
   // Escena 03: Gran Revelación
   reveal: {
-    superTitle: "¡HOY SE CELEBRA A LO GRANDE!",
+    superTitle: "¡HOY ES TU DÍA!",
     mainTitle: "¡FELIZ CUMPLEAÑOS!",
     nameHighlight: "KIMBERLY",
-    subtitle: "Una vuelta más al sol para una de las personas más increíbles, auténticas y divertidas que conozco."
+    subtitle: "Una vuelta más al sol para una de las personas más geniales que conozco."
   },
 
-  // Escena 04: Mensaje Personal (Cálido, conversacional, con complicidad)
+  // Escena 04: Mensaje Personal (Cálido y directo, sin etiquetas académicas)
   personalMessage: {
-    badge: "UNA PEQUEÑA PAUSA SINCERA",
-    title: "Bueno... ahora sí en serio.",
+    title: "Para ti, siempre.",
     paragraphs: [
       "Quería tomarme un momento para hacerte algo que no fuera el típico mensaje de texto de dos líneas que todo el mundo copia y pega en un cumpleaños.",
       "La verdad es que admiro un montón tu energía, tu forma de ver las cosas y esa capacidad que tienes para hacer que cualquier momento normal termine siendo una anécdota divertida.",
@@ -139,69 +136,55 @@ export const birthdayConfig = {
     ]
   },
 
-  // Escena 05: Galería de Fotos (Scrapbook)
+  // Escena 05: Fotografías (Solo la primera lleva texto personalizado; las demás son limpias)
   gallery: {
-    title: "Álbum de Recuerdos",
-    subtitle: "Pequeños instantes capturados en el tiempo (toca cualquier foto para verla en pantalla completa)",
     photos: [
       {
         id: 1,
         src: "./assets/photos/foto01.jpg",
-        caption: "Ese día de risas que no podían parar ✨",
-        date: "Momento favorito",
-        tag: "Inolvidable",
+        caption: "Ese día de risas que no podían parar ✨", // La única con mensaje personalizado
         rotation: -2,
         placeholderColor: "#F8B195"
       },
       {
         id: 2,
         src: "./assets/photos/foto02.jpg",
-        caption: "Una de esas miradas de «¿qué estás inventando ahora?»",
-        date: "Anécdota clásica",
-        tag: "Cómplices",
-        rotation: 2.5,
+        caption: "",
+        rotation: 2,
         placeholderColor: "#C06C84"
       },
       {
         id: 3,
         src: "./assets/photos/foto03.jpg",
-        caption: "Café, charlas eternas y arreglar el mundo en una tarde",
-        date: "Buenas pláticas",
-        tag: "Café & Risas",
+        caption: "",
         rotation: -1.5,
         placeholderColor: "#6C5B7B"
       },
       {
         id: 4,
         src: "./assets/photos/foto04.jpg",
-        caption: "Simplemente tú siendo tú (y brillando sin esfuerzo)",
-        date: "Especial",
-        tag: "Auténtica",
+        caption: "",
         rotation: 2,
         placeholderColor: "#355C7D"
       },
       {
         id: 5,
         src: "./assets/photos/foto05.jpg",
-        caption: "Cuando el plan era tranquilo pero terminó siendo una aventura",
-        date: "Aventura improvisada",
-        tag: "Momentos top",
-        rotation: -2.5,
+        caption: "",
+        rotation: -2,
         placeholderColor: "#E9B872"
       },
       {
         id: 6,
         src: "./assets/photos/foto06.jpg",
-        caption: "La mejor sonrisa de todas. Guardada para siempre aquí.",
-        date: "Hoy y siempre",
-        tag: "La mejor",
+        caption: "",
         rotation: 1.5,
         placeholderColor: "#FF6B6B"
       }
     ]
   },
 
-  // Escena 06: Recuerdos (Cápsulas de memoria)
+  // Escena 06: Recuerdos
   memories: [
     {
       id: "m1",
@@ -237,85 +220,53 @@ export const birthdayConfig = {
     }
   ],
 
-  // NUEVA SECCIÓN 15: Pedir un deseo / Regalo
+  // Sección: Pedir un deseo / Regalo
   wish: {
-    badge: "UN DETALLE PARA TI",
     title: "Bueno... ahora te toca a ti.",
-    subtitle: "Si pudieras pedir un regalo, un plan o un deseo cualquiera para este nuevo año de vida... ¿cuál sería? (Cero pena, no hay respuestas incorrectas).",
-    placeholder: "Escribe aquí lo que se te ocurra... un libro, una salida por café, un postre, un deseo secreto...",
-    buttonSave: "Guardar mi deseo en la carta ✨",
-    savedTitle: "¡Deseo guardado con éxito! 🌟",
-    savedMessage: "Tu deseo ha quedado registrado en este rincón especial. Me tocará ver cómo me las ingenio para cumplirlo...",
-    shareWhatsappText: "Compartírselo a Andrés por WhatsApp 💬"
+    subtitle: "Si pudieras pedir un regalo, un plan o un deseo cualquiera para este nuevo año... ¿cuál sería?",
+    placeholder: "Escribe aquí lo que se te ocurra... un libro, un café, una salida, un deseo secreto...",
+    buttonSave: "Guardar deseo ✨",
+    savedNotice: "Me tocará ver cómo me las ingenio para cumplirlo...",
+    recipientEmail: "pepesanchezrobertoandres@gmail.com"
   },
 
-  // Escena 07: Cupcake interactivo con vela
+  // Escena 07: Cupcake interactivo
   surprise: {
-    promptQuestion: "Creo que todavía falta algo importante aquí...",
+    promptQuestion: "Falta una cosa más...",
     buttonText: "¿Qué cosa? 👀",
-    revealedTitle: "¡Pide un deseo!",
-    instruction: "Toca la velita para apagar la llama y que se cumpla tu deseo ✨",
-    wishGrantedTitle: "¡Deseo enviado al universo! 🎂✨",
-    wishGrantedText: "Que todo lo bonito que le das al mundo regrese a ti multiplicado por diez. (Y sí, tienes derecho a pedir doble porción de pastel hoy)."
+    revealedTitle: "Pide un deseo",
+    instruction: "Toca la velita para apagar la llama ✨",
+    wishGrantedTitle: "¡Deseo pedido! 🎂✨",
+    wishGrantedText: "Que todo lo bonito que le das al mundo regrese a ti multiplicado por diez."
   },
 
-  // Escena 08: Carta manuscrita en sobre físico (100% fotográfica)
+  // Escena 08: Carta manuscrita (Sin textos explicativos obvios)
   letter: {
-    badge: "PALABRAS DE PUÑO Y LETRA",
-    envelopeTitle: "Casi se me olvida lo más importante...",
-    envelopeSubtitle: "Hay cosas que se sienten más reales cuando se escriben a mano. Toca el sobre para abrirlo.",
+    envelopeTitle: "Casi se me olvida la parte más importante...",
     sealInitial: "K",
     buttonOpen: "Abrir carta ✉️",
     pages: [
       {
         id: 1,
         image: "./assets/letter/carta-01.jpg",
-        altText: "Página 1 de la carta para Kimberly",
-        note: "Página 1 de 2 — Escrita a mano con calma pensando en ti"
+        altText: "Página 1 de la carta para Kimberly"
       },
       {
         id: 2,
         image: "./assets/letter/carta-02.jpg",
-        altText: "Página 2 de la carta para Kimberly",
-        note: "Página 2 de 2 — Con todo el cariño del mundo"
+        altText: "Página 2 de la carta para Kimberly"
       }
     ]
   },
 
-  // Escena 09: Mensaje final y despedida afectiva
+  // Escena 09: Cierre
   finalMessage: {
-    badge: "ANTES DE QUE CIERRES ESTO...",
-    title: "Un último pensamiento",
+    title: "Feliz cumpleaños, Kimberly.",
     quote: "«Hay personas que hacen el mundo un poquito más cálido simplemente estando en él. Tú eres una de ellas.»",
-    closingNote: "Pásala hermoso hoy, disfruta a tu gente, ríete hasta que te duela el estómago... y no te olvides de guardarme un pedacito de pastel.",
-    signOff: "Feliz cumpleaños, Kimberly. ✨",
-    replayButton: "Volver a ver el cortometraje 🍎",
-    soundCredits: "Hecho con dedicación y cariño exclusivamente para ti."
-  },
-
-  // Secretos interactivos (Easter Eggs)
-  easterEggs: [
-    {
-      id: "egg-star",
-      trigger: "star-doodle",
-      message: "⭐ ¡Has descubierto una estrella secreta! Kimberly tiene un 100% de probabilidad de tener un año increíble."
-    },
-    {
-      id: "egg-bracket",
-      trigger: "bracket-doodle",
-      message: "🦷 Recordatorio médico: Ninguna manzana resultó herida de gravedad... sólo mi orgullo."
-    },
-    {
-      id: "egg-lemon",
-      trigger: "lemon-doodle",
-      message: "🍋 Nivel de ardor: 9999/10. Pero valió la pena para hacerte sonreír hoy."
-    },
-    {
-      id: "egg-stamp",
-      trigger: "postal-stamp",
-      message: "💌 Sello oficial de autenticidad: Esta experiencia fue pensada y programada con muchísimo cariño para ti."
-    }
-  ]
+    closingNote: "Disfruta mucho tu día, ríete hasta que te duela el estómago... y guárdame un pedacito de pastel.",
+    signOff: "Con cariño. ✨",
+    credits: "Hecho especialmente para ti."
+  }
 };
 
 export default birthdayConfig;

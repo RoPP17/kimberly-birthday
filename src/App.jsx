@@ -33,10 +33,6 @@ export function App() {
     }, 120);
   };
 
-  const handleReplay = () => {
-    comicRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <EasterEggProvider>
       <div className={`min-h-screen w-full relative transition-colors duration-700 ${isLetterReading ? 'bg-[#FAF6F0]' : 'bg-[#FAF7F2]'}`}>
@@ -47,61 +43,63 @@ export function App() {
         {/* Navegación flotante discreta entre escenas */}
         <FloatingNav isVisible={hasStarted} />
 
-        {/* FLUJO RESPONSIVE NATURAL (SIN DISPOSITIVOS FICTICIOS) */}
+        {/* CONTENIDO CENTRADO Y CÓMODO EN CUALQUIER PANTALLA (SIN TELÉFONOS FALSOS) */}
         {!hasStarted ? (
           <Scene01Intro onStart={handleStart} />
         ) : (
-          <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-10 flex flex-col items-center gap-12 sm:gap-16">
-            
-            {/* 1. Cortometraje Cómico */}
-            <div id="scene-comic" ref={comicRef} className="w-full scroll-mt-6">
-              <Scene02ComicVideo onComplete={handleComicComplete} />
-            </div>
+          <div className="w-full min-h-screen flex justify-center py-6 px-4">
+            <main className="w-full max-w-[480px] flex flex-col items-center gap-10">
+              
+              {/* 1. Cortometraje Cómico */}
+              <div id="scene-comic" ref={comicRef} className="w-full scroll-mt-6">
+                <Scene02ComicVideo onComplete={handleComicComplete} />
+              </div>
 
-            {/* 2. Gran Revelación de Cumpleaños */}
-            <div id="scene-reveal" ref={revealRef} className="w-full scroll-mt-6">
-              <Scene03BirthdayReveal onContinue={() => {
-                const el = document.getElementById('scene-message');
-                el?.scrollIntoView({ behavior: 'smooth' });
-              }} />
-            </div>
+              {/* 2. Gran Revelación de Cumpleaños */}
+              <div id="scene-reveal" ref={revealRef} className="w-full scroll-mt-6">
+                <Scene03BirthdayReveal onContinue={() => {
+                  const el = document.getElementById('scene-message');
+                  el?.scrollIntoView({ behavior: 'smooth' });
+                }} />
+              </div>
 
-            {/* 3. Mensaje Personal Sincero */}
-            <div id="scene-message" className="w-full scroll-mt-6">
-              <Scene04PersonalMessage />
-            </div>
+              {/* 3. Mensaje Personal Sincero */}
+              <div id="scene-message" className="w-full scroll-mt-6">
+                <Scene04PersonalMessage />
+              </div>
 
-            {/* 4. Galería Scrapbook de Fotografías */}
-            <div id="scene-photos" className="w-full scroll-mt-6">
-              <Scene05ScrapbookGallery />
-            </div>
+              {/* 4. Galería de Fotografías */}
+              <div id="scene-photos" className="w-full scroll-mt-6">
+                <Scene05ScrapbookGallery />
+              </div>
 
-            {/* 5. Cápsulas de Memoria */}
-            <div id="scene-memories" className="w-full scroll-mt-6">
-              <Scene06Memories />
-            </div>
+              {/* 5. Cápsulas de Memoria */}
+              <div id="scene-memories" className="w-full scroll-mt-6">
+                <Scene06Memories />
+              </div>
 
-            {/* 6. Nueva Sección: Pedir un deseo / Regalo */}
-            <div id="scene-wish" className="w-full scroll-mt-6">
-              <SceneWish />
-            </div>
+              {/* 6. Pedir un deseo */}
+              <div id="scene-wish" className="w-full scroll-mt-6">
+                <SceneWish />
+              </div>
 
-            {/* 7. Sorpresa Interactiva: Cupcake y Vela */}
-            <div id="scene-cupcake" className="w-full scroll-mt-6">
-              <Scene07SurpriseCupcake />
-            </div>
+              {/* 7. Sorpresa: Cupcake y Vela */}
+              <div id="scene-cupcake" className="w-full scroll-mt-6">
+                <Scene07SurpriseCupcake />
+              </div>
 
-            {/* 8. Sobre Físico y Carta Manuscrita (Foto real) */}
-            <div id="scene-letter" className="w-full scroll-mt-6">
-              <Scene08HandwrittenLetter onLetterOpenStateChange={setIsLetterReading} />
-            </div>
+              {/* 8. Sobre y Carta Manuscrita Real */}
+              <div id="scene-letter" className="w-full scroll-mt-6">
+                <Scene08HandwrittenLetter onLetterOpenStateChange={setIsLetterReading} />
+              </div>
 
-            {/* 9. Mensaje Final y Celebración */}
-            <div id="scene-final" className="w-full pb-20 scroll-mt-6">
-              <Scene09FinalCelebration onReplay={handleReplay} />
-            </div>
+              {/* 9. Cierre y Celebración */}
+              <div id="scene-final" className="w-full pb-24 scroll-mt-6">
+                <Scene09FinalCelebration />
+              </div>
 
-          </main>
+            </main>
+          </div>
         )}
       </div>
     </EasterEggProvider>
