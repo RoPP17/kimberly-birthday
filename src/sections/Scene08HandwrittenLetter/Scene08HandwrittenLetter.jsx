@@ -60,20 +60,14 @@ export const Scene08HandwrittenLetter = ({ onLetterOpenStateChange }) => {
   };
 
   return (
-    <section className="py-12 px-4 flex flex-col items-center justify-center select-none w-full">
-      <div className="max-w-lg w-full text-center mb-6">
-        <h2 className="font-display text-2xl sm:text-3xl font-bold text-[#2A2525]">
-          {letter.envelopeTitle}
-        </h2>
-      </div>
-
+    <section className="py-6 px-4 flex flex-col items-center justify-center select-none w-full">
       {/* ==========================================
           SOBRE FÍSICO INTERACTIVO
           ========================================== */}
       {!isOpen ? (
         <div
           onClick={handleOpenEnvelope}
-          className="relative max-w-xs sm:max-w-sm w-full mx-auto cursor-pointer group transition-transform duration-300 hover:scale-105 active:scale-95"
+          className="relative max-w-xs sm:max-w-sm w-full mx-auto cursor-pointer group transition-transform duration-300 hover:scale-105 active:scale-95 mt-2"
           style={{ perspective: '1000px' }}
         >
           {/* Cuerpo del sobre en relieve */}
@@ -116,10 +110,10 @@ export const Scene08HandwrittenLetter = ({ onLetterOpenStateChange }) => {
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          <div className="bg-[#FFFDF9] p-4 sm:p-6 rounded-2xl border-2 border-[#E9B872]/40 shadow-2xl relative hand-border-soft">
-            {/* Washi tapes en las esquinas */}
-            <WashiTape color="mustard" className="-top-3 left-6" />
-            <WashiTape color="peach" className="-top-3 right-6" />
+          <div className="bg-[#FFFDF9] pt-8 px-4 pb-4 sm:pt-8 sm:px-6 sm:pb-6 rounded-2xl border-2 border-[#E9B872]/40 shadow-2xl relative hand-border-soft">
+            {/* Washi tapes en las esquinas con amplio margen */}
+            <WashiTape color="mustard" className="-top-3.5 left-6 z-20" />
+            <WashiTape color="peach" className="-top-3.5 right-6 z-20" />
 
             {/* Barra superior de controles de lectura */}
             <div className="flex items-center justify-between pb-3 mb-3 border-b border-dashed border-[#2A2525]/15">

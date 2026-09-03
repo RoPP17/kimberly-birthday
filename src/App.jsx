@@ -5,12 +5,13 @@ import FloatingNav from './components/common/FloatingNav';
 import Scene01Intro from './sections/Scene01Intro/Scene01Intro';
 import Scene02ComicVideo from './sections/Scene02ComicVideo/Scene02ComicVideo';
 import Scene03BirthdayReveal from './sections/Scene03BirthdayReveal/Scene03BirthdayReveal';
-import Scene04PersonalMessage from './sections/Scene04PersonalMessage/Scene04PersonalMessage';
+import Scene08HandwrittenLetter from './sections/Scene08HandwrittenLetter/Scene08HandwrittenLetter';
 import Scene05ScrapbookGallery from './sections/Scene05ScrapbookGallery/Scene05ScrapbookGallery';
+import SceneVideo from './sections/SceneVideo/SceneVideo';
 import Scene06Memories from './sections/Scene06Memories/Scene06Memories';
 import SceneWish from './sections/SceneWish/SceneWish';
+import Scene04PersonalMessage from './sections/Scene04PersonalMessage/Scene04PersonalMessage';
 import Scene07SurpriseCupcake from './sections/Scene07SurpriseCupcake/Scene07SurpriseCupcake';
-import Scene08HandwrittenLetter from './sections/Scene08HandwrittenLetter/Scene08HandwrittenLetter';
 import Scene09FinalCelebration from './sections/Scene09FinalCelebration/Scene09FinalCelebration';
 
 export function App() {
@@ -58,14 +59,14 @@ export function App() {
               {/* 2. Gran Revelación de Cumpleaños */}
               <div id="scene-reveal" ref={revealRef} className="w-full scroll-mt-6">
                 <Scene03BirthdayReveal onContinue={() => {
-                  const el = document.getElementById('scene-message');
+                  const el = document.getElementById('scene-letter');
                   el?.scrollIntoView({ behavior: 'smooth' });
                 }} />
               </div>
 
-              {/* 3. Mensaje Personal Sincero */}
-              <div id="scene-message" className="w-full scroll-mt-6">
-                <Scene04PersonalMessage />
+              {/* 3. Sobre y Carta Manuscrita Real (Ahora aquí arriba) */}
+              <div id="scene-letter" className="w-full scroll-mt-6">
+                <Scene08HandwrittenLetter onLetterOpenStateChange={setIsLetterReading} />
               </div>
 
               {/* 4. Galería de Fotografías */}
@@ -73,27 +74,32 @@ export function App() {
                 <Scene05ScrapbookGallery />
               </div>
 
-              {/* 5. Cápsulas de Memoria */}
+              {/* 5. Video After Effects con su nombre */}
+              <div id="scene-video" className="w-full scroll-mt-6">
+                <SceneVideo />
+              </div>
+
+              {/* 6. Recuerdos */}
               <div id="scene-memories" className="w-full scroll-mt-6">
                 <Scene06Memories />
               </div>
 
-              {/* 6. Pedir un deseo */}
+              {/* 7. Pedir un deseo */}
               <div id="scene-wish" className="w-full scroll-mt-6">
                 <SceneWish />
               </div>
 
-              {/* 7. Sorpresa: Cupcake y Vela */}
+              {/* 8. Mensaje Personal Sincero ("Para ti, siempre", ahora aquí abajo) */}
+              <div id="scene-message" className="w-full scroll-mt-6">
+                <Scene04PersonalMessage />
+              </div>
+
+              {/* 9. Sorpresa: Cupcake y Vela */}
               <div id="scene-cupcake" className="w-full scroll-mt-6">
                 <Scene07SurpriseCupcake />
               </div>
 
-              {/* 8. Sobre y Carta Manuscrita Real */}
-              <div id="scene-letter" className="w-full scroll-mt-6">
-                <Scene08HandwrittenLetter onLetterOpenStateChange={setIsLetterReading} />
-              </div>
-
-              {/* 9. Cierre y Celebración */}
+              {/* 10. Cierre y Celebración */}
               <div id="scene-final" className="w-full pb-24 scroll-mt-6">
                 <Scene09FinalCelebration />
               </div>

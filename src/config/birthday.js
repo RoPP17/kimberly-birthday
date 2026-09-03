@@ -25,7 +25,6 @@ export const birthdayConfig = {
         id: 1,
         timeMs: 3800,
         text: "Hoy por la mañana estaba pensando en que hoy es tu cumpleaños.",
-        speech: "«Hoy cumple Kimberly... hay que hacer algo especial...»",
         doodle: "thinking",
         sound: null
       },
@@ -33,7 +32,6 @@ export const birthdayConfig = {
         id: 2,
         timeMs: 3400,
         text: "Pero me dio un hambre tremenda. Y vi una manzana roja en la cocina.",
-        speech: "«Una manzanita rápida.»",
         doodle: "apple",
         sound: null
       },
@@ -41,7 +39,6 @@ export const birthdayConfig = {
         id: 3,
         timeMs: 3400,
         text: "Fui directo a pegarle un mordisco con toda la emoción...",
-        speech: "«A comer... ¡espera!...»",
         doodle: "bite_approach",
         sound: null
       },
@@ -49,7 +46,6 @@ export const birthdayConfig = {
         id: 4,
         timeMs: 3800,
         text: "RECORDÉ QUE TENGO BRACKETS. Mordisco cancelado por ley odontológica.",
-        speech: "«Si muerdo esto, adiós brackets.»",
         doodle: "brackets_alert",
         sound: "bite"
       },
@@ -57,7 +53,6 @@ export const birthdayConfig = {
         id: 5,
         timeMs: 3400,
         text: "Decidí actuar como persona civilizada y buscar un cuchillo para cortarla.",
-        speech: "«A cortarla en rodajitas.»",
         doodle: "knife",
         sound: "slice"
       },
@@ -65,7 +60,6 @@ export const birthdayConfig = {
         id: 6,
         timeMs: 3400,
         text: "Y por hacerme el chef profesional... ¡ZAS! Me corté un dedo.",
-        speech: "«¡AUUUCH! Sangre inocente.»",
         doodle: "cut_finger",
         sound: "slice"
       },
@@ -73,7 +67,6 @@ export const birthdayConfig = {
         id: 7,
         timeMs: 4000,
         text: "Fui por algo para limpiarme... y tropecé con medio limón que estaba en la mesa.",
-        speech: "«No... por favor, no...»",
         doodle: "lemon_fall",
         sound: null
       },
@@ -81,34 +74,22 @@ export const birthdayConfig = {
         id: 8,
         timeMs: 4500,
         text: "EL JUGO DE LIMÓN CAYÓ EXACTAMENTE EN EL CORTE. DOLOR GALÁCTICO.",
-        speech: "«¡¿POR QUÉ EL LIMÓN?! ¡¿QUÉ HICE YO?!»",
         doodle: "lemon_scream",
         sound: "scream"
       },
-      // Momento de respiración y vendaje (NO una pantalla en blanco)
+      // Remate directo (sin diapositiva de silencio previa)
       {
         id: 9,
-        timeMs: 3400,
-        text: "...",
-        speech: "«Silencio dramático...»",
-        doodle: "pause_silence",
-        sound: null
-      },
-      // Remate afectivo directo
-      {
-        id: 10,
         timeMs: 5000,
         text: "Y no sabes cuánto me arde no poder estar hoy contigo.",
-        speech: "",
         doodle: "punchline",
         sound: "sparkle"
       },
       // Suspiro final
       {
-        id: 11,
+        id: 10,
         timeMs: 3200,
         text: "Uf.",
-        speech: "",
         doodle: "sigh",
         sound: null
       }
@@ -124,25 +105,31 @@ export const birthdayConfig = {
     subtitle: "Una vuelta más al sol para una de las personas más geniales que conozco."
   },
 
-  // Escena 04: Mensaje Personal (Cálido y directo, sin etiquetas académicas)
-  personalMessage: {
-    title: "Para ti, siempre.",
-    paragraphs: [
-      "Quería tomarme un momento para hacerte algo que no fuera el típico mensaje de texto de dos líneas que todo el mundo copia y pega en un cumpleaños.",
-      "La verdad es que admiro un montón tu energía, tu forma de ver las cosas y esa capacidad que tienes para hacer que cualquier momento normal termine siendo una anécdota divertida.",
-      "Tienes una personalidad demasiado especial, Kimberly. De esas que dejan marca en la gente con solo estar ahí, siendo tú misma, con tus ocurrencias y tu risa.",
-      "Eres una persona sumamente importante para mí. Me alegra muchísimo coincidir contigo en esta vida y tener la suerte de compartir tantas conversaciones y risas.",
-      "Así que hoy se celebra todo eso... y más."
+  // Escena: Carta manuscrita (Ahora va arriba, sin textos de relleno)
+  letter: {
+    sealInitial: "K",
+    buttonOpen: "Abrir carta ✉️",
+    pages: [
+      {
+        id: 1,
+        image: "./assets/letter/carta-01.jpg",
+        altText: "Página 1 de la carta para Kimberly"
+      },
+      {
+        id: 2,
+        image: "./assets/letter/carta-02.jpg",
+        altText: "Página 2 de la carta para Kimberly"
+      }
     ]
   },
 
-  // Escena 05: Fotografías (Solo la primera lleva texto personalizado; las demás son limpias)
+  // Escena: Fotografías (Solo la primera lleva texto personalizado; las demás son limpias)
   gallery: {
     photos: [
       {
         id: 1,
         src: "./assets/photos/foto01.jpg",
-        caption: "Ese día de risas que no podían parar ✨", // La única con mensaje personalizado
+        caption: "Ese día de risas que no podían parar ✨",
         rotation: -2,
         placeholderColor: "#F8B195"
       },
@@ -184,7 +171,14 @@ export const birthdayConfig = {
     ]
   },
 
-  // Escena 06: Recuerdos
+  // NUEVA ESCENA: Video After Effects con su nombre
+  video: {
+    src: "./assets/video/animacion-nombre.mp4",
+    fallbackSrc: "./assets/video/video.mp4",
+    caption: "Una pequeña animación para ti ✨"
+  },
+
+  // Escena: Recuerdos (Sin títulos de "cápsulas de memoria")
   memories: [
     {
       id: "m1",
@@ -220,17 +214,29 @@ export const birthdayConfig = {
     }
   ],
 
-  // Sección: Pedir un deseo / Regalo
+  // Sección: Pedir un deseo / Regalo (Envío a andrespepe014@gmail.com)
   wish: {
     title: "Bueno... ahora te toca a ti.",
     subtitle: "Si pudieras pedir un regalo, un plan o un deseo cualquiera para este nuevo año... ¿cuál sería?",
     placeholder: "Escribe aquí lo que se te ocurra... un libro, un café, una salida, un deseo secreto...",
     buttonSave: "Guardar deseo ✨",
     savedNotice: "Me tocará ver cómo me las ingenio para cumplirlo...",
-    recipientEmail: "pepesanchezrobertoandres@gmail.com"
+    recipientEmail: "andrespepe014@gmail.com"
   },
 
-  // Escena 07: Cupcake interactivo
+  // Escena: Mensaje Personal (Ahora va más abajo, antes del cupcake)
+  personalMessage: {
+    title: "Para ti, siempre.",
+    paragraphs: [
+      "Quería tomarme un momento para hacerte algo que no fuera el típico mensaje de texto de dos líneas que todo el mundo copia y pega en un cumpleaños.",
+      "La verdad es que admiro un montón tu energía, tu forma de ver las cosas y esa capacidad que tienes para hacer que cualquier momento normal termine siendo una anécdota divertida.",
+      "Tienes una personalidad demasiado especial, Kimberly. De esas que dejan marca en la gente con solo estar ahí, siendo tú misma, con tus ocurrencias y tu risa.",
+      "Eres una persona sumamente importante para mí. Me alegra muchísimo coincidir contigo en esta vida y tener la suerte de compartir tantas conversaciones y risas.",
+      "Así que hoy se celebra todo eso... y más."
+    ]
+  },
+
+  // Escena: Cupcake interactivo
   surprise: {
     promptQuestion: "Falta una cosa más...",
     buttonText: "¿Qué cosa? 👀",
@@ -240,26 +246,7 @@ export const birthdayConfig = {
     wishGrantedText: "Que todo lo bonito que le das al mundo regrese a ti multiplicado por diez."
   },
 
-  // Escena 08: Carta manuscrita (Sin textos explicativos obvios)
-  letter: {
-    envelopeTitle: "Casi se me olvida la parte más importante...",
-    sealInitial: "K",
-    buttonOpen: "Abrir carta ✉️",
-    pages: [
-      {
-        id: 1,
-        image: "./assets/letter/carta-01.jpg",
-        altText: "Página 1 de la carta para Kimberly"
-      },
-      {
-        id: 2,
-        image: "./assets/letter/carta-02.jpg",
-        altText: "Página 2 de la carta para Kimberly"
-      }
-    ]
-  },
-
-  // Escena 09: Cierre
+  // Escena: Cierre
   finalMessage: {
     title: "Feliz cumpleaños, Kimberly.",
     quote: "«Hay personas que hacen el mundo un poquito más cálido simplemente estando en él. Tú eres una de ellas.»",

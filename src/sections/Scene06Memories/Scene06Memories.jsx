@@ -31,37 +31,33 @@ export const Scene06Memories = () => {
   return (
     <section className="w-full py-8 px-4 select-none">
       <div className="max-w-2xl mx-auto">
-        {/* Encabezado */}
-        <div className="text-center mb-10">
-          <span className="hand-badge text-xs sm:text-sm">CÁPSULAS DE MEMORIA</span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#2A2525] mt-2">
+        {/* Encabezado limpio */}
+        <div className="text-center mb-6">
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-[#2A2525]">
             Cosas que no se me olvidan
           </h2>
-          <p className="font-body text-sm sm:text-base text-[#685E5E] mt-1">
-            Pequeños detalles que hacen que seas tú.
-          </p>
         </div>
 
-        {/* Lista de cápsulas de recuerdos estilo fichas de cartulina */}
-        <div className="space-y-5">
+        {/* Lista de recuerdos estilo fichas de cartulina */}
+        <div className="space-y-4">
           {memories.map((mem, index) => {
             const isExpanded = activeMemory === mem.id;
             return (
               <div
                 key={mem.id}
                 onClick={() => handleToggle(mem.id)}
-                className={`bg-[#FFFFFF] p-5 sm:p-6 rounded-2xl border-2 transition-all duration-300 cursor-pointer relative shadow-sm hover:shadow-md ${
+                className={`bg-[#FFFFFF] p-5 sm:p-6 rounded-2xl border transition-all duration-300 cursor-pointer relative shadow-sm hover:shadow-md ${
                   isExpanded
                     ? 'border-[#FF6B6B] bg-[#FFFDFC]'
                     : 'border-[#2A2525]/10 hover:border-[#E9B872]'
                 }`}
                 style={{
-                  transform: `rotate(${(index % 2 === 0 ? -0.8 : 0.8)}deg)`
+                  transform: `rotate(${(index % 2 === 0 ? -0.5 : 0.5)}deg)`
                 }}
               >
-                {/* Pin decorativo en la primera memoria */}
+                {/* Pin decorativo con holgura segura */}
                 {index === 0 && (
-                  <div className="absolute -top-3.5 left-6">
+                  <div className="absolute -top-3.5 left-6 z-10">
                     <HandDrawnPin color="#FF6B6B" />
                   </div>
                 )}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import birthdayConfig from '../../config/birthday';
 import soundEngine from '../../audio/soundEngine';
 import { WashiTape } from '../../components/common/HandcraftedGraphics';
@@ -9,17 +9,6 @@ export const SceneWish = () => {
   const [isFlyingAway, setIsFlyingAway] = useState(false);
   const wish = birthdayConfig.wish;
 
-  // Recuperar deseo previo si ya se había escrito
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem('kimberly_birthday_wish');
-      if (saved) {
-        setWishText(saved);
-        setIsSaved(true);
-      }
-    } catch (e) {}
-  }, []);
-
   const handleSaveWish = async (e) => {
     e.preventDefault();
     if (!wishText.trim()) return;
@@ -27,31 +16,29 @@ export const SceneWish = () => {
     soundEngine.playPop();
     setIsFlyingAway(true);
 
-    // 1. Guardar de forma segura en localStorage
+    // 1. Guardar de respaldo en localStorage
     try {
       localStorage.setItem('kimberly_birthday_wish', wishText.trim());
     } catch (err) {}
 
-    // 2. Enviar silenciosamente por FormSubmit al correo de Roberto Andrés
-    if (wish.recipientEmail) {
-      try {
-        fetch(`https://formsubmit.co/ajax/${wish.recipientEmail}`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify({
-            remitente: 'Kimberly ✨',
-            asunto: 'Deseo de Cumpleaños de Kimberly',
-            deseo: wishText.trim(),
-            fecha: new Date().toLocaleString()
-          })
-        }).catch(() => {});
-      } catch (err) {}
-    }
+    // 2. Enviar automáticamente al correo de Andrés (andrespepe014@gmail.com)
+    try {
+      fetch(`https://formsubmit.co/ajax/${wish.recipientEmail || 'andrespepe014@gmail.com'}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: '✨ Deseo de Cumpleaños de Kimberly',
+          remitente: 'Kimberly ✨',
+          deseo: wishText.trim(),
+          fecha: new Date().toLocaleString('es-ES')
+        })
+      }).catch(() => {});
+    } catch (err) {}
 
-    // Animación de cierre y despegue
+    // 3. Animación de cierre y vuelo del papel
     setTimeout(() => {
       soundEngine.playSparkle();
       setIsFlyingAway(false);
@@ -71,10 +58,11 @@ export const SceneWish = () => {
       </div>
 
       <div className="relative">
-        <WashiTape color="mint" className="-top-3 left-6" />
-        <WashiTape color="mustard" className="-top-3 right-6" />
+        {/* Washi tapes posicionadas en capas altas con holgura segura */}
+        <WashiTape color="mint" className="-top-3.5 left-6 z-20" />
+        <WashiTape color="mustard" className="-top-3.5 right-6 z-20" />
 
-        <div className="bg-[#FFFDF9] paper-sheet p-6 rounded-2xl border border-[#E9B872]/40 shadow-xl relative hand-border-soft overflow-hidden">
+        <div className="bg-[#FFFDF9] paper-sheet pt-8 px-6 pb-6 rounded-2xl border border-[#E9B872]/40 shadow-xl relative hand-border-soft overflow-hidden">
           {!isSaved ? (
             <div
               className={`transition-all duration-700 ease-in-out ${
@@ -105,13 +93,13 @@ export const SceneWish = () => {
               </form>
             </div>
           ) : (
-            /* Estado guardado: Solo la frase solicitada con el deseo */
+            /* Estado guardado: Frase exacta y limpia */
             <div className="text-center py-6 space-y-3">
               <div className="text-3xl animate-float">✉️✨</div>
               <p className="font-hand text-2xl text-[#FF6B6B] font-bold italic">
                 «{wishText}»
               </p>
-              <p className="font-display italic text-base text-[#685E5E] pt-2">
+              <p className="font-display italic text-base sm:text-lg text-[#685E5E] pt-2">
                 {wish.savedNotice}
               </p>
             </div>

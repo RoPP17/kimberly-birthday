@@ -9,13 +9,13 @@ export const Scene04PersonalMessage = () => {
     <section className="relative w-full py-8 px-4 flex justify-center select-none">
       <div className="max-w-2xl w-full relative">
         {/* Washi tape y pin decorativo */}
-        <WashiTape color="lavender" className="-top-3 left-8" style={{ transform: 'rotate(-2deg)' }} />
-        <div className="absolute -top-4 right-8 z-10">
+        <WashiTape color="lavender" className="-top-3.5 left-8 z-20" style={{ transform: 'rotate(-2deg)' }} />
+        <div className="absolute -top-4 right-8 z-20">
           <HandDrawnPin color="#FF6B6B" />
         </div>
 
-        {/* Tarjeta estilo hoja de papel artesanal */}
-        <div className="bg-[#FFFFFF] paper-sheet p-6 sm:p-10 rounded-2xl border border-[#2A2525]/10 shadow-xl relative hand-border-soft">
+        {/* Tarjeta estilo hoja de papel artesanal con amplia holgura superior */}
+        <div className="bg-[#FFFFFF] paper-sheet pt-8 px-6 pb-6 sm:pt-10 sm:px-10 sm:pb-10 rounded-2xl border border-[#2A2525]/10 shadow-xl relative hand-border-soft">
           <h2 className="font-display text-2xl sm:text-3xl font-bold text-[#2A2525] mb-5">
             {content.title}
           </h2>

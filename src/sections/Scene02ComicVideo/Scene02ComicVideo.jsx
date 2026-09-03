@@ -109,14 +109,12 @@ export const Scene02ComicVideo = ({ onComplete }) => {
       case 'thinking':
         return (
           <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto">
-            {/* Cara pensativa */}
             <circle cx="85" cy="115" r="36" fill="#FFFDF9" stroke="#2A2525" strokeWidth="2.5" />
             <circle cx="76" cy="108" r="3.5" fill="#2A2525" />
             <circle cx="94" cy="108" r="3.5" fill="#2A2525" />
             <path d="M78 128 Q85 132 92 128" stroke="#2A2525" strokeWidth="2.2" fill="none" strokeLinecap="round" />
             <ellipse cx="68" cy="116" rx="5" ry="3" fill="#F8B195" opacity="0.6" />
             <ellipse cx="102" cy="116" rx="5" ry="3" fill="#F8B195" opacity="0.6" />
-            {/* Burbujas de pensamiento */}
             <circle cx="120" cy="72" r="5" fill="#E9B872" />
             <circle cx="132" cy="58" r="7" fill="#E9B872" />
             <rect x="110" y="24" width="76" height="28" rx="14" fill="#FFFFFF" stroke="#2A2525" strokeWidth="2" />
@@ -129,7 +127,6 @@ export const Scene02ComicVideo = ({ onComplete }) => {
       case 'apple':
         return (
           <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto animate-float">
-            {/* Manzana roja con brillo */}
             <path
               d="M100 52 C80 22, 45 42, 50 88 C55 132, 85 165, 100 165 C115 165, 145 132, 150 88 C155 42, 120 22, 100 52 Z"
               fill="#FF6B6B"
@@ -145,7 +142,6 @@ export const Scene02ComicVideo = ({ onComplete }) => {
       case 'bite_approach':
         return (
           <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto">
-            {/* Personaje con boca abierta dirigiéndose a la manzana */}
             <g transform="translate(-15, 0)">
               <circle cx="70" cy="100" r="38" fill="#FFFDF9" stroke="#2A2525" strokeWidth="2.5" />
               <circle cx="62" cy="90" r="3" fill="#2A2525" />
@@ -166,20 +162,16 @@ export const Scene02ComicVideo = ({ onComplete }) => {
       case 'brackets_alert':
         return (
           <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto animate-shake">
-            {/* Diente gigante con brackets metálicos y alambre */}
             <path
               d="M70 50 C55 50, 48 80, 52 115 C56 145, 65 170, 78 170 C88 170, 92 145, 100 145 C108 145, 112 170, 122 170 C135 170, 144 145, 148 115 C152 80, 145 50, 130 50 C118 50, 110 65, 100 65 C90 65, 82 50, 70 50 Z"
               fill="#FFFFFF"
               stroke="#2A2525"
               strokeWidth="2.8"
             />
-            {/* Alambre metálico horizontal */}
             <path d="M50 105 L150 105" stroke="#8C8282" strokeWidth="2.5" strokeLinecap="round" />
-            {/* Brackets cuadrados plateados */}
             <rect x="68" y="98" width="14" height="14" rx="2" fill="#D9E2EC" stroke="#2A2525" strokeWidth="1.5" />
             <rect x="93" y="98" width="14" height="14" rx="2" fill="#D9E2EC" stroke="#2A2525" strokeWidth="1.5" />
             <rect x="118" y="98" width="14" height="14" rx="2" fill="#D9E2EC" stroke="#2A2525" strokeWidth="1.5" />
-            {/* Círculo de prohibido */}
             <circle cx="100" cy="105" r="45" stroke="#FF6B6B" strokeWidth="4" fill="none" opacity="0.85" />
             <line x1="68" y1="73" x2="132" y2="137" stroke="#FF6B6B" strokeWidth="4" strokeLinecap="round" />
           </svg>
@@ -188,7 +180,6 @@ export const Scene02ComicVideo = ({ onComplete }) => {
       case 'knife':
         return (
           <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto">
-            {/* Cuchillo cortando rodajas */}
             <g transform="rotate(-20 100 90)">
               <rect x="30" y="85" width="45" height="18" rx="4" fill="#684A2A" stroke="#2A2525" strokeWidth="2.5" />
               <path d="M75 83 L165 83 C178 83 182 105 165 112 L75 112 Z" fill="#D9E2EC" stroke="#2A2525" strokeWidth="2.5" />
@@ -201,7 +192,6 @@ export const Scene02ComicVideo = ({ onComplete }) => {
       case 'cut_finger':
         return (
           <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto animate-shake">
-            {/* Dedo con corte y gotita */}
             <rect x="80" y="65" width="40" height="90" rx="20" fill="#F8B195" stroke="#2A2525" strokeWidth="2.5" />
             <path d="M88 72 Q98 68 108 72 L108 84 L88 84 Z" fill="#FFF" stroke="#2A2525" strokeWidth="1.5" />
             <line x1="86" y1="105" x2="114" y2="115" stroke="#FF6B6B" strokeWidth="3.5" strokeLinecap="round" />
@@ -215,11 +205,9 @@ export const Scene02ComicVideo = ({ onComplete }) => {
       case 'lemon_fall':
         return (
           <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto animate-float">
-            {/* Medio limón cayendo */}
             <ellipse cx="100" cy="70" rx="42" ry="34" fill="#FEE08B" stroke="#2A2525" strokeWidth="2.5" />
             <circle cx="100" cy="70" r="28" fill="#FFF59D" stroke="#E9B872" strokeWidth="1.5" />
             <path d="M100 45 L100 95 M75 70 L125 70 M82 52 L118 88 M82 88 L118 52" stroke="#E9B872" strokeWidth="2" strokeLinecap="round" />
-            {/* Gotas cayendo hacia el dedo */}
             <circle cx="98" cy="122" r="4.5" fill="#FEE08B" stroke="#E9B872" strokeWidth="1" />
             <circle cx="102" cy="148" r="5" fill="#FEE08B" stroke="#E9B872" strokeWidth="1" />
           </svg>
@@ -228,36 +216,15 @@ export const Scene02ComicVideo = ({ onComplete }) => {
       case 'lemon_scream':
         return (
           <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto animate-shake">
-            {/* Cara gritando de dolor por el limón con vapor saliendo */}
             <circle cx="100" cy="105" r="44" fill="#FFF0F0" stroke="#FF6B6B" strokeWidth="3" />
-            {/* Ojos saltones en X o espirales */}
             <path d="M80 92 L94 106 M94 92 L80 106" stroke="#FF6B6B" strokeWidth="3" strokeLinecap="round" />
             <path d="M106 92 L120 106 M120 92 L106 106" stroke="#FF6B6B" strokeWidth="3" strokeLinecap="round" />
-            {/* Boca gritando */}
             <ellipse cx="100" cy="126" rx="16" ry="12" fill="#FF6B6B" />
-            {/* Humo/fuego dibujado a los costados */}
             <path d="M48 95 Q38 85 45 75 Q35 65 48 55" stroke="#FF6B6B" strokeWidth="2" fill="none" strokeLinecap="round" />
             <path d="M152 95 Q162 85 155 75 Q165 65 152 55" stroke="#FF6B6B" strokeWidth="2" fill="none" strokeLinecap="round" />
             <text x="100" y="42" textAnchor="middle" fontSize="15" fontFamily="Caveat" fontWeight="bold" fill="#FF6B6B">
               ¡ARDOR TOTAL!
             </text>
-          </svg>
-        );
-
-      case 'pause_silence':
-        return (
-          <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto">
-            {/* Personaje de pie con curita en el dedo, gota de sudor, silencio incómodo */}
-            <circle cx="100" cy="95" r="36" fill="#FFFDF9" stroke="#2A2525" strokeWidth="2.5" />
-            <circle cx="90" cy="90" r="3" fill="#2A2525" />
-            <circle cx="110" cy="90" r="3" fill="#2A2525" />
-            <line x1="94" y1="112" x2="106" y2="112" stroke="#2A2525" strokeWidth="2" strokeLinecap="round" />
-            {/* Gotita de sudor incómoda */}
-            <path d="M125 80 Q122 74 125 70 Q128 74 125 80 Z" fill="#A2D2BF" stroke="#2A2525" strokeWidth="1" />
-            {/* Dedo con curita blanca */}
-            <rect x="92" y="145" width="16" height="32" rx="8" fill="#F8B195" stroke="#2A2525" strokeWidth="2" />
-            <rect x="90" y="153" width="20" height="12" rx="2" fill="#FFFFFF" stroke="#2A2525" strokeWidth="1.5" />
-            <line x1="100" y1="155" x2="100" y2="163" stroke="#FF6B6B" strokeWidth="1.5" />
           </svg>
         );
 
@@ -272,7 +239,6 @@ export const Scene02ComicVideo = ({ onComplete }) => {
                 strokeWidth="2"
               />
               <path d="M40 22 Q42 14 46 10" stroke="#684A2A" strokeWidth="2" strokeLinecap="round" fill="none" />
-              {/* Curita en la manzana */}
               <rect x="30" y="38" width="20" height="8" rx="2" fill="#FFFFFF" stroke="#2A2525" strokeWidth="1.2" transform="rotate(-15 40 42)" />
             </svg>
             <p className="font-display italic text-2xl sm:text-3xl text-[#FF6B6B] font-bold text-center leading-snug drop-shadow-sm">
@@ -286,11 +252,9 @@ export const Scene02ComicVideo = ({ onComplete }) => {
         return (
           <svg viewBox="0 0 200 200" className="w-36 h-36 sm:w-44 sm:h-44 mx-auto">
             <circle cx="100" cy="100" r="40" fill="#FFFDF9" stroke="#2A2525" strokeWidth="2.5" />
-            {/* Ojos cerrados aliviados */}
             <path d="M82 96 Q90 102 98 96" stroke="#2A2525" strokeWidth="2.5" fill="none" strokeLinecap="round" />
             <path d="M102 96 Q110 102 118 96" stroke="#2A2525" strokeWidth="2.5" fill="none" strokeLinecap="round" />
             <path d="M92 116 Q100 122 108 116" stroke="#2A2525" strokeWidth="2" fill="none" strokeLinecap="round" />
-            {/* Pequeña nubecita de suspiro */}
             <path d="M125 125 Q135 120 145 125 Q150 132 142 136 Q132 136 125 125 Z" fill="#E9F2F9" stroke="#2A2525" strokeWidth="1.5" />
             <text x="100" y="45" textAnchor="middle" fontSize="22" fontFamily="Fraunces" fontStyle="italic" fontWeight="bold" fill="#685E5E">
               Uf.
@@ -301,7 +265,7 @@ export const Scene02ComicVideo = ({ onComplete }) => {
   };
 
   return (
-    <section className="w-full py-4 select-none">
+    <section className="w-full py-2 select-none">
       <div className="w-full bg-[#FFFFFF] rounded-2xl border border-[#2A2525]/15 shadow-xl p-5 sm:p-7 relative hand-border-soft overflow-hidden">
         
         {/* Barra de progreso segmentada */}
@@ -340,16 +304,7 @@ export const Scene02ComicVideo = ({ onComplete }) => {
           {renderVisual(current.doodle)}
         </div>
 
-        {/* Diálogo del personaje */}
-        {current.speech && current.doodle !== 'punchline' && (
-          <div className="bg-[#FAF7F2] p-2.5 rounded-xl border border-dashed border-[#E9B872] my-2 text-center">
-            <p className="font-hand text-xl sm:text-2xl font-bold text-[#FF6B6B] leading-snug">
-              {current.speech}
-            </p>
-          </div>
-        )}
-
-        {/* Narración */}
+        {/* Narración limpia inferior (sin cajas rojas arriba) */}
         {current.doodle !== 'punchline' && (
           <p className="font-body text-sm sm:text-base text-[#2A2525] text-center min-h-[44px] px-2 flex items-center justify-center leading-relaxed">
             {current.text}

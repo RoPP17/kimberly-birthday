@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import soundEngine from '../../audio/soundEngine';
 
 export const FloatingNav = ({ isVisible = true }) => {
-  const [activeSection, setActiveSection] = useState('scene-comic');
-
   const navItems = [
     { id: 'scene-comic', label: 'Historia', icon: '🎬' },
     { id: 'scene-reveal', label: 'Festejo', icon: '🎉' },
-    { id: 'scene-message', label: 'Mensaje', icon: '💌' },
+    { id: 'scene-letter', label: 'Carta', icon: '✉️' },
     { id: 'scene-photos', label: 'Fotos', icon: '📸' },
+    { id: 'scene-video', label: 'Video', icon: '📽️' },
     { id: 'scene-memories', label: 'Recuerdos', icon: '💭' },
     { id: 'scene-wish', label: 'Deseo', icon: '🌟' },
-    { id: 'scene-letter', label: 'Carta', icon: '✉️' }
+    { id: 'scene-message', label: 'Mensaje', icon: '💌' }
   ];
 
   const handleScrollTo = (id) => {

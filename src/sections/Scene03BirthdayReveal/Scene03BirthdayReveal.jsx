@@ -74,20 +74,6 @@ export const Scene03BirthdayReveal = ({ onContinue }) => {
         <p className="font-body text-lg sm:text-xl text-[#685E5E] max-w-md mt-4">
           {birthdayConfig.reveal.subtitle}
         </p>
-
-        {/* Flecha y llamada a la acción */}
-        <div className="mt-8 flex flex-col items-center gap-3">
-          <DoodleArrow className="animate-bounce" />
-          <button
-            onClick={() => {
-              soundEngine.playPop();
-              if (onContinue) onContinue();
-            }}
-            className="btn-handcrafted text-xl px-8 py-3.5 shadow-md"
-          >
-            Explorar lo que sigue 👇
-          </button>
-        </div>
       </div>
     </section>
   );
