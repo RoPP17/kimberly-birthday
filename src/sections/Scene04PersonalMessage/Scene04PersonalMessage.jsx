@@ -6,7 +6,7 @@ export const Scene04PersonalMessage = () => {
   const content = birthdayConfig.personalMessage;
 
   return (
-    <section className="relative py-16 px-4 flex justify-center select-none">
+    <section className="relative w-full py-8 px-4 flex justify-center select-none">
       <div className="max-w-2xl w-full relative">
         {/* Washi tape y pin decorativo */}
         <WashiTape color="lavender" className="-top-3 left-8" style={{ transform: 'rotate(-2deg)' }} />

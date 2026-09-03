@@ -31,7 +31,7 @@ export const Scene07SurpriseCupcake = () => {
   };
 
   return (
-    <section className="py-16 px-4 flex justify-center select-none">
+    <section className="w-full py-8 px-4 flex justify-center select-none">
       <div className="max-w-lg w-full bg-[#FFFFFF] p-8 sm:p-10 rounded-2xl border-2 border-dashed border-[#E9B872] text-center shadow-lg relative hand-border">
         {!isRevealed ? (
           <div className="py-4 space-y-4">

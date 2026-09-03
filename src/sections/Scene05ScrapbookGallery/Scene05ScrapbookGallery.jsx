@@ -102,7 +102,7 @@ export const Scene05ScrapbookGallery = () => {
   };
 
   return (
-    <section className="py-16 px-4 select-none">
+    <section className="w-full py-8 px-4 select-none">
       <div className="max-w-4xl mx-auto">
         {/* Encabezado de la galería */}
         <div className="text-center mb-12">

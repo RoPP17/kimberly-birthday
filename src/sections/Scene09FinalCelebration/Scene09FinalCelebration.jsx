@@ -39,7 +39,7 @@ export const Scene09FinalCelebration = ({ onReplay }) => {
   };
 
   return (
-    <section className="py-20 px-4 text-center select-none relative overflow-hidden">
+    <section className="w-full py-10 px-4 text-center select-none relative overflow-hidden">
       {/* Estrella secreta interactiva */}
       <div className="absolute top-8 right-12 animate-float">
         <DoodleStar

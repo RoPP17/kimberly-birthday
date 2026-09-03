@@ -29,8 +29,8 @@ export const Scene06Memories = () => {
   };
 
   return (
-    <section className="py-16 px-4 select-none">
-      <div className="max-w-3xl mx-auto">
+    <section className="w-full py-8 px-4 select-none">
+      <div className="max-w-2xl mx-auto">
         {/* Encabezado */}
         <div className="text-center mb-10">
           <span className="hand-badge text-xs sm:text-sm">CÁPSULAS DE MEMORIA</span>

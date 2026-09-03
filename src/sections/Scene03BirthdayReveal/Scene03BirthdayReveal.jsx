@@ -31,7 +31,7 @@ export const Scene03BirthdayReveal = ({ onContinue }) => {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 py-16 text-center select-none overflow-hidden">
+    <section className="relative w-full py-10 px-4 flex flex-col items-center justify-center text-center select-none overflow-hidden">
       {/* Elementos flotantes de fiesta artesanal */}
       <div className="absolute top-10 left-6 animate-float">
         <DoodleStar size={36} color="#FF6B6B" />
