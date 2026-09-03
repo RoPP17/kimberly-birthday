@@ -1,0 +1,10 @@
+=====================================================
+CARPETA DE LA CARTA MANUSCRITA (public/assets/letter/)
+=====================================================
+
+Coloca aquí las fotos o escaneos de tu carta escrita a mano:
+
+1. carta-01.jpg  -> (Página 1 de la carta)
+2. carta-02.jpg  -> (Página 2 de la carta)
+
+El visor cuenta con zoom interactivo (+ y -) y navegación táctil optimizada para que pueda leerse cada palabra con total nitidez.

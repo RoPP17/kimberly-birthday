@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { EasterEggProvider } from './components/effects/InteractiveEasterEggs';
+import ContinuousBackgroundConfetti from './components/effects/ContinuousBackgroundConfetti';
 import FloatingAudioControl from './components/common/FloatingAudioControl';
-import FloatingNav from './components/common/FloatingNav';
 import Scene01Intro from './sections/Scene01Intro/Scene01Intro';
 import Scene02ComicVideo from './sections/Scene02ComicVideo/Scene02ComicVideo';
 import Scene03BirthdayReveal from './sections/Scene03BirthdayReveal/Scene03BirthdayReveal';
@@ -36,20 +36,23 @@ export function App() {
 
   return (
     <EasterEggProvider>
-      <div className={`min-h-screen w-full relative transition-colors duration-700 ${isLetterReading ? 'bg-[#FAF6F0]' : 'bg-[#FAF7F2]'}`}>
+      <div className={`min-h-screen w-full relative transition-colors duration-700 overflow-x-hidden ${isLetterReading ? 'bg-[#FAF6F0]' : 'bg-[#FAF7F2]'}`}>
         
+        {/* Confeti continuo cayendo suavemente al fondo */}
+        <ContinuousBackgroundConfetti />
+
         {/* Control flotante de audio */}
         <FloatingAudioControl />
 
-        {/* Navegación flotante discreta entre escenas */}
-        <FloatingNav isVisible={hasStarted} />
-
         {/* CONTENIDO CENTRADO Y CÓMODO EN CUALQUIER PANTALLA (SIN TELÉFONOS FALSOS) */}
         {!hasStarted ? (
-          <Scene01Intro onStart={handleStart} />
+          <div className="relative z-10">
+            <Scene01Intro onStart={handleStart} />
+          </div>
         ) : (
-          <div className="w-full min-h-screen flex justify-center py-6 px-4">
-            <main className="w-full max-w-[480px] flex flex-col items-center gap-10">
+          <div className="w-full min-h-screen flex justify-center py-6 px-4 relative z-10">
+            {/* Espacio amplio al final (pb-48) para poder seguir bajando sin cortes abruptos */}
+            <main className="w-full max-w-[480px] flex flex-col items-center gap-10 pb-48">
               
               {/* 1. Cortometraje Cómico */}
               <div id="scene-comic" ref={comicRef} className="w-full scroll-mt-6">
@@ -58,13 +61,10 @@ export function App() {
 
               {/* 2. Gran Revelación de Cumpleaños */}
               <div id="scene-reveal" ref={revealRef} className="w-full scroll-mt-6">
-                <Scene03BirthdayReveal onContinue={() => {
-                  const el = document.getElementById('scene-letter');
-                  el?.scrollIntoView({ behavior: 'smooth' });
-                }} />
+                <Scene03BirthdayReveal />
               </div>
 
-              {/* 3. Sobre y Carta Manuscrita Real (Ahora aquí arriba) */}
+              {/* 3. Sobre y Carta Manuscrita Real (Ubicada arriba) */}
               <div id="scene-letter" className="w-full scroll-mt-6">
                 <Scene08HandwrittenLetter onLetterOpenStateChange={setIsLetterReading} />
               </div>
@@ -89,7 +89,7 @@ export function App() {
                 <SceneWish />
               </div>
 
-              {/* 8. Mensaje Personal Sincero ("Para ti, siempre", ahora aquí abajo) */}
+              {/* 8. Mensaje Personal Sincero ("Para ti, siempre", ubicado abajo) */}
               <div id="scene-message" className="w-full scroll-mt-6">
                 <Scene04PersonalMessage />
               </div>
@@ -100,7 +100,7 @@ export function App() {
               </div>
 
               {/* 10. Cierre y Celebración */}
-              <div id="scene-final" className="w-full pb-24 scroll-mt-6">
+              <div id="scene-final" className="w-full scroll-mt-6">
                 <Scene09FinalCelebration />
               </div>
 

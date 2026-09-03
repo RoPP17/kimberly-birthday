@@ -62,8 +62,8 @@ export const Scene05ScrapbookGallery = () => {
 
   return (
     <section className="w-full py-4 select-none">
-      {/* Cuadrícula estilo Scrapbook: fotos limpias sin títulos académicos */}
-      <div className="grid grid-cols-2 gap-4 sm:gap-6">
+      {/* Cuadrícula estilo Scrapbook compacta */}
+      <div className="grid grid-cols-2 gap-3.5 sm:gap-4 max-w-sm sm:max-w-md mx-auto">
         {photos.map((photo, idx) => {
           const washiColors = ['peach', 'mint', 'lavender', 'mustard', 'coral'];
           const tapeColor = washiColors[idx % washiColors.length];
@@ -77,7 +77,7 @@ export const Scene05ScrapbookGallery = () => {
                 transform: `rotate(${photo.rotation}deg)`
               }}
               className={`polaroid-card cursor-pointer group ${
-                isFirstPhoto ? 'col-span-2 sm:col-span-2' : 'col-span-1'
+                isFirstPhoto ? 'col-span-2 max-w-[260px] mx-auto w-full' : 'col-span-1'
               }`}
             >
               {/* Washi tape superior */}
@@ -87,11 +87,11 @@ export const Scene05ScrapbookGallery = () => {
                 style={{ transform: `rotate(${-photo.rotation * 1.5}deg)` }}
               />
 
-              {/* Contenido fotográfico */}
-              <div className="overflow-hidden bg-[#F4EFEA] rounded-sm relative">
+              {/* Contenido fotográfico compacto */}
+              <div className="overflow-hidden bg-[#F4EFEA] rounded-sm relative aspect-[4/5] max-h-[220px]">
                 {renderPhotoContent(photo)}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                  <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/95 text-[#2A2525] font-body text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/95 text-[#2A2525] font-body text-xs font-bold px-2.5 py-0.5 rounded-full shadow-sm">
                     Ver 🔍
                   </span>
                 </div>
@@ -99,8 +99,8 @@ export const Scene05ScrapbookGallery = () => {
 
               {/* Solo la primera foto lleva pie de foto personalizado; las demás son limpias */}
               {isFirstPhoto && photo.caption && (
-                <div className="mt-3 px-1 text-center">
-                  <p className="font-hand text-xl sm:text-2xl font-bold text-[#2A2525] leading-snug">
+                <div className="mt-2 px-1 text-center">
+                  <p className="font-hand text-lg sm:text-xl font-bold text-[#2A2525] leading-snug">
                     {photo.caption}
                   </p>
                 </div>

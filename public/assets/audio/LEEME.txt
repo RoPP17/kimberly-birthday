@@ -1,0 +1,11 @@
+=====================================================
+CARPETA DE MÚSICA DE FONDO (public/assets/audio/)
+=====================================================
+
+Coloca aquí la canción o música que deseas que suene en bucle durante la visita de Kimberly:
+
+Nombre del archivo:
+- musica.mp3   (o alternativamente: musica-fondo.mp3 o cancion.mp3)
+
+Formato: MP3.
+La música arrancará suavemente en bucle en cuanto Kimberly pulse el botón inicial "Comenzar ✨" y cuenta con el botón flotante (♫) para silenciar o reanudar cuando ella quiera.

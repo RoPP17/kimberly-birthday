@@ -24,42 +24,42 @@ export const birthdayConfig = {
       {
         id: 1,
         timeMs: 3800,
-        text: "Hoy por la mañana estaba pensando en que hoy es tu cumpleaños.",
+        text: "Hace rato estaba pensando que hoy es tu cumpleaños.",
         doodle: "thinking",
         sound: null
       },
       {
         id: 2,
         timeMs: 3400,
-        text: "Pero me dio un hambre tremenda. Y vi una manzana roja en la cocina.",
+        text: "Pero me dio un antojo y me fui a tragar una manzana roja que vi.",
         doodle: "apple",
         sound: null
       },
       {
         id: 3,
         timeMs: 3400,
-        text: "Fui directo a pegarle un mordisco con toda la emoción...",
+        text: "Fui directo a tragarla como puerquito.",
         doodle: "bite_approach",
         sound: null
       },
       {
         id: 4,
         timeMs: 3800,
-        text: "RECORDÉ QUE TENGO BRACKETS. Mordisco cancelado por ley odontológica.",
+        text: "Pero recordé que tengo brackets y me decepcioné.",
         doodle: "brackets_alert",
         sound: "bite"
       },
       {
         id: 5,
         timeMs: 3400,
-        text: "Decidí actuar como persona civilizada y buscar un cuchillo para cortarla.",
+        text: "Pero por una vez decidí actuar civilizadamente y fui a buscar un cuchillo.",
         doodle: "knife",
         sound: "slice"
       },
       {
         id: 6,
         timeMs: 3400,
-        text: "Y por hacerme el chef profesional... ¡ZAS! Me corté un dedo.",
+        text: "Y como la vida de ensalada no tiene fin, me corté.",
         doodle: "cut_finger",
         sound: "slice"
       },
@@ -73,11 +73,11 @@ export const birthdayConfig = {
       {
         id: 8,
         timeMs: 4500,
-        text: "EL JUGO DE LIMÓN CAYÓ EXACTAMENTE EN EL CORTE. DOLOR GALÁCTICO.",
+        text: "Y como claramente tenía que pasar, se me cayó el jugo de limón.",
         doodle: "lemon_scream",
         sound: "scream"
       },
-      // Remate directo (sin diapositiva de silencio previa)
+      // Remate emocional
       {
         id: 9,
         timeMs: 5000,
@@ -105,7 +105,7 @@ export const birthdayConfig = {
     subtitle: "Una vuelta más al sol para una de las personas más geniales que conozco."
   },
 
-  // Escena: Carta manuscrita (Ahora va arriba, sin textos de relleno)
+  // Escena: Carta manuscrita
   letter: {
     sealInitial: "K",
     buttonOpen: "Abrir carta ✉️",
@@ -123,7 +123,7 @@ export const birthdayConfig = {
     ]
   },
 
-  // Escena: Fotografías (Solo la primera lleva texto personalizado; las demás son limpias)
+  // Escena: Fotografías
   gallery: {
     photos: [
       {
@@ -171,14 +171,14 @@ export const birthdayConfig = {
     ]
   },
 
-  // NUEVA ESCENA: Video After Effects con su nombre
+  // Video After Effects con su nombre
   video: {
     src: "./assets/video/animacion-nombre.mp4",
     fallbackSrc: "./assets/video/video.mp4",
     caption: "Una pequeña animación para ti ✨"
   },
 
-  // Escena: Recuerdos (Sin títulos de "cápsulas de memoria")
+  // Escena: Recuerdos
   memories: [
     {
       id: "m1",
@@ -214,17 +214,17 @@ export const birthdayConfig = {
     }
   ],
 
-  // Sección: Pedir un deseo / Regalo (Envío a andrespepe014@gmail.com)
+  // Sección: Pedir un deseo / Regalo (Redacción más amigable y natural)
   wish: {
-    title: "Bueno... ahora te toca a ti.",
-    subtitle: "Si pudieras pedir un regalo, un plan o un deseo cualquiera para este nuevo año... ¿cuál sería?",
-    placeholder: "Escribe aquí lo que se te ocurra... un libro, un café, una salida, un deseo secreto...",
+    title: "Oye... casi se me pasa preguntarte algo:",
+    subtitle: "Si pudieras pedir cualquier cosa para consentirte o festejar este año... ¿qué se te antoja? (Cero pena, lo que sea cuenta).",
+    placeholder: "Escribe aquí lo que se te antoje... una salida por café, un libro, un postre, un plan...",
     buttonSave: "Guardar deseo ✨",
     savedNotice: "Me tocará ver cómo me las ingenio para cumplirlo...",
     recipientEmail: "andrespepe014@gmail.com"
   },
 
-  // Escena: Mensaje Personal (Ahora va más abajo, antes del cupcake)
+  // Escena: Mensaje Personal
   personalMessage: {
     title: "Para ti, siempre.",
     paragraphs: [

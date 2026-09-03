@@ -29,7 +29,7 @@ export const Scene06Memories = () => {
   };
 
   return (
-    <section className="w-full py-8 px-4 select-none">
+    <section className="w-full py-12 px-4 select-none my-6">
       <div className="max-w-2xl mx-auto">
         {/* Encabezado limpio */}
         <div className="text-center mb-6">

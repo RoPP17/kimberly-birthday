@@ -110,10 +110,10 @@ export const Scene08HandwrittenLetter = ({ onLetterOpenStateChange }) => {
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          <div className="bg-[#FFFDF9] pt-8 px-4 pb-4 sm:pt-8 sm:px-6 sm:pb-6 rounded-2xl border-2 border-[#E9B872]/40 shadow-2xl relative hand-border-soft">
-            {/* Washi tapes en las esquinas con amplio margen */}
-            <WashiTape color="mustard" className="-top-3.5 left-6 z-20" />
-            <WashiTape color="peach" className="-top-3.5 right-6 z-20" />
+          <div className="bg-[#FFFDF9] p-4 sm:p-6 rounded-2xl border-2 border-[#E9B872]/40 shadow-2xl relative hand-border-soft">
+            {/* Washi tapes en los costados para no interferir con los controles superiores */}
+            <WashiTape color="mustard" className="top-1/3 -left-3.5 z-20" style={{ transform: 'rotate(-90deg)' }} />
+            <WashiTape color="peach" className="top-1/3 -right-3.5 z-20" style={{ transform: 'rotate(90deg)' }} />
 
             {/* Barra superior de controles de lectura */}
             <div className="flex items-center justify-between pb-3 mb-3 border-b border-dashed border-[#2A2525]/15">

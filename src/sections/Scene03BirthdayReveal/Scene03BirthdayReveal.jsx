@@ -55,8 +55,8 @@ export const Scene03BirthdayReveal = ({ onContinue }) => {
         </h1>
 
         {/* Nombre de Kimberly destacado */}
-        <div className="relative inline-block mt-2">
-          <span className="font-display font-black text-5xl sm:text-7xl md:text-8xl text-[#FF6B6B] tracking-wide drop-shadow-sm">
+        <div className="relative inline-block mt-1 pb-3 overflow-visible">
+          <span className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-[#FF6B6B] tracking-wide drop-shadow-sm inline-block leading-normal">
             {birthdayConfig.reveal.nameHighlight}
           </span>
           {/* Subrayado orgánico hecho a mano */}

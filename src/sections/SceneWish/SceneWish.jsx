@@ -58,11 +58,11 @@ export const SceneWish = () => {
       </div>
 
       <div className="relative">
-        {/* Washi tapes posicionadas en capas altas con holgura segura */}
-        <WashiTape color="mint" className="-top-3.5 left-6 z-20" />
-        <WashiTape color="mustard" className="-top-3.5 right-6 z-20" />
+        {/* Washi tapes posicionadas en los costados para no interferir con el contenido */}
+        <WashiTape color="mint" className="top-1/3 -left-3.5 z-20" style={{ transform: 'rotate(-90deg)' }} />
+        <WashiTape color="mustard" className="top-1/3 -right-3.5 z-20" style={{ transform: 'rotate(90deg)' }} />
 
-        <div className="bg-[#FFFDF9] paper-sheet pt-8 px-6 pb-6 rounded-2xl border border-[#E9B872]/40 shadow-xl relative hand-border-soft overflow-hidden">
+        <div className="bg-[#FFFDF9] paper-sheet p-6 rounded-2xl border border-[#E9B872]/40 shadow-xl relative hand-border-soft overflow-hidden">
           {!isSaved ? (
             <div
               className={`transition-all duration-700 ease-in-out ${

@@ -1,0 +1,15 @@
+=====================================================
+CARPETA DE IMÁGENES DE KIMBERLY (public/assets/photos/)
+=====================================================
+
+Coloca aquí las 6 fotografías que quieras mostrar en el álbum:
+
+1. foto01.jpg  -> (La foto principal/favorita, es la única que lleva tu dedicatoria especial)
+2. foto02.jpg  -> Foto limpia
+3. foto03.jpg  -> Foto limpia
+4. foto04.jpg  -> Foto limpia
+5. foto05.jpg  -> Foto limpia
+6. foto06.jpg  -> Foto limpia
+
+Formatos soportados: JPG, PNG o WebP.
+Recomendación: fotos en orientación vertical u horizontal nítidas.
