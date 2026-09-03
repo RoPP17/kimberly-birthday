@@ -1,0 +1,10 @@
+=====================================================
+CARPETA DE VIDEO / ANIMACIÓN (public/assets/video/)
+=====================================================
+
+Coloca aquí el video en formato MP4 que exportes desde After Effects o con el script de MATLAB:
+
+Nombre del archivo:
+- animacion-nombre.mp4   (o alternativamente: video.mp4)
+
+La web lo detectará automáticamente y lo reproducirá con el botón elegante sin barras toscas, pausando la música mientras dure el video.
