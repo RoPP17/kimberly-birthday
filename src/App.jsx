@@ -104,6 +104,9 @@ export function App() {
                 <Scene09FinalCelebration />
               </div>
 
+              {/* Espaciador inferior generoso para permitir seguir bajando cómodamente */}
+              <div className="w-full h-36" aria-hidden="true" />
+
             </main>
           </div>
         )}

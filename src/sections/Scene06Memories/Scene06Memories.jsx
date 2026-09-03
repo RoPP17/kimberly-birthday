@@ -38,8 +38,8 @@ export const Scene06Memories = () => {
           </h2>
         </div>
 
-        {/* Lista de recuerdos estilo fichas de cartulina */}
-        <div className="space-y-4">
+        {/* Lista de recuerdos con amplia separación entre recuadros */}
+        <div className="space-y-8">
           {memories.map((mem, index) => {
             const isExpanded = activeMemory === mem.id;
             return (

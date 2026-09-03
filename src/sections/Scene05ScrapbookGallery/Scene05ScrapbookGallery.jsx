@@ -77,7 +77,7 @@ export const Scene05ScrapbookGallery = () => {
                 transform: `rotate(${photo.rotation}deg)`
               }}
               className={`polaroid-card cursor-pointer group ${
-                isFirstPhoto ? 'col-span-2 max-w-[260px] mx-auto w-full' : 'col-span-1'
+                isFirstPhoto ? 'col-span-2 w-full' : 'col-span-1'
               }`}
             >
               {/* Washi tape superior */}
@@ -87,8 +87,12 @@ export const Scene05ScrapbookGallery = () => {
                 style={{ transform: `rotate(${-photo.rotation * 1.5}deg)` }}
               />
 
-              {/* Contenido fotográfico compacto */}
-              <div className="overflow-hidden bg-[#F4EFEA] rounded-sm relative aspect-[4/5] max-h-[220px]">
+              {/* Contenido fotográfico: la primera foto es más grande y destacada */}
+              <div
+                className={`overflow-hidden bg-[#F4EFEA] rounded-sm relative aspect-[4/5] ${
+                  isFirstPhoto ? 'max-h-[340px]' : 'max-h-[220px]'
+                }`}
+              >
                 {renderPhotoContent(photo)}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                   <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/95 text-[#2A2525] font-body text-xs font-bold px-2.5 py-0.5 rounded-full shadow-sm">
@@ -99,8 +103,8 @@ export const Scene05ScrapbookGallery = () => {
 
               {/* Solo la primera foto lleva pie de foto personalizado; las demás son limpias */}
               {isFirstPhoto && photo.caption && (
-                <div className="mt-2 px-1 text-center">
-                  <p className="font-hand text-lg sm:text-xl font-bold text-[#2A2525] leading-snug">
+                <div className="mt-2.5 px-1 text-center">
+                  <p className="font-hand text-xl sm:text-2xl font-bold text-[#2A2525] leading-snug">
                     {photo.caption}
                   </p>
                 </div>
@@ -110,14 +114,15 @@ export const Scene05ScrapbookGallery = () => {
         })}
       </div>
 
-      {/* Visor modal en pantalla completa */}
+      {/* Visor modal: se cierra instantáneamente al tocar a cualquier costado en la parte vacía */}
       {activePhotoIndex !== null && (
         <div
-          className="fixed inset-0 z-[1000] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-[1000] bg-black/75 backdrop-blur-xs flex items-center justify-center p-6 cursor-pointer select-none"
           onClick={handleClosePhoto}
         >
+          {/* Tarjeta compacta para dejar amplio espacio a los costados */}
           <div
-            className="bg-white p-3 sm:p-5 rounded-2xl max-w-md w-full relative shadow-2xl"
+            className="bg-white p-3 sm:p-4 rounded-2xl max-w-[310px] w-full relative shadow-2xl cursor-default"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between pb-2 mb-2 border-b border-[#2A2525]/10">
@@ -127,6 +132,7 @@ export const Scene05ScrapbookGallery = () => {
               <button
                 onClick={handleClosePhoto}
                 className="w-7 h-7 rounded-full bg-[#FAF4EF] text-[#2A2525] hover:bg-[#FF6B6B] hover:text-white transition-colors flex items-center justify-center text-sm font-bold"
+                title="Cerrar"
               >
                 ✕
               </button>
@@ -137,7 +143,7 @@ export const Scene05ScrapbookGallery = () => {
             </div>
 
             {activePhotoIndex === 0 && photos[0].caption && (
-              <p className="font-hand text-xl text-center text-[#2A2525] font-bold mt-3">
+              <p className="font-hand text-lg text-center text-[#2A2525] font-bold mt-2.5">
                 {photos[0].caption}
               </p>
             )}
@@ -145,17 +151,21 @@ export const Scene05ScrapbookGallery = () => {
             <div className="flex items-center justify-between mt-3 pt-2 border-t border-[#2A2525]/10">
               <button
                 onClick={handlePrevPhoto}
-                className="px-3 py-1.5 text-xs font-body font-bold text-[#685E5E] hover:text-[#2A2525] rounded hover:bg-[#FAF4EF]"
+                className="px-3 py-1 text-xs font-body font-bold text-[#685E5E] hover:text-[#2A2525] rounded hover:bg-[#FAF4EF]"
               >
                 ◀ Anterior
               </button>
               <button
                 onClick={handleNextPhoto}
-                className="px-3 py-1.5 text-xs font-body font-bold text-[#685E5E] hover:text-[#2A2525] rounded hover:bg-[#FAF4EF]"
+                className="px-3 py-1 text-xs font-body font-bold text-[#685E5E] hover:text-[#2A2525] rounded hover:bg-[#FAF4EF]"
               >
                 Siguiente ▶
               </button>
             </div>
+
+            <p className="text-center text-[11px] font-body text-[#8C8282] mt-2">
+              (Toca a un costado para cerrar)
+            </p>
           </div>
         </div>
       )}

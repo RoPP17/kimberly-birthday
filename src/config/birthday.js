@@ -10,11 +10,10 @@ export const birthdayConfig = {
   
   // Escena 01: Intriga inicial
   intro: {
-    greeting: "Hey, Kimberly...",
-    pauseText: "Antes de que sigas mirando...",
-    hookText: "tengo algo preparado para ti.",
-    buttonText: "Comenzar ✨",
-    audioNotice: "(Sube el volumen para escucharlo mejor)"
+    greeting: "Hola Kimberly",
+    pauseText: "Hice un pequeño detalle para ti",
+    hookText: "Te quiero decir algunas cosas",
+    buttonText: "Comenzar ✨"
   },
 
   // Escena 02: Cortometraje animado ("La Manzana, los Brackets y el Limón")

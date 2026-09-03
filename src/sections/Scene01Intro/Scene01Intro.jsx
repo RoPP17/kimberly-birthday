@@ -80,9 +80,6 @@ export const Scene01Intro = ({ onStart }) => {
           >
             {birthdayConfig.intro.buttonText}
           </button>
-          <span className="font-body text-xs text-[#8C8282]">
-            {birthdayConfig.intro.audioNotice}
-          </span>
         </div>
       </div>
     </section>

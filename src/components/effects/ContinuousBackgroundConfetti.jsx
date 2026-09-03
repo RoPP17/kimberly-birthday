@@ -1,19 +1,29 @@
 import React, { useMemo } from 'react';
 
 export const ContinuousBackgroundConfetti = () => {
-  // Generar 30 piezas de confeti artesanal con propiedades fijas para evitar re-renderizados
+  // Generar 45 piezas de confeti festivo artesanal con desfases negativos para que ya estén en pantalla desde el inicio
   const confettiPieces = useMemo(() => {
-    const colors = ['#FF6B6B', '#F8B195', '#E9B872', '#A88BBA', '#A2D2BF', '#FFD166'];
-    const shapes = ['rectangle', 'circle', 'streamer'];
+    const colors = [
+      '#FF6B6B', // Coral festivo
+      '#F5B041', // Dorado cálido
+      '#FA8072', // Durazno
+      '#A88BBA', // Lavanda
+      '#48C9B0', // Menta
+      '#F4D03F', // Amarillo sol
+      '#EB984E'  // Naranja suave
+    ];
+    const shapes = ['ribbon', 'circle', 'square'];
 
-    return Array.from({ length: 32 }, (_, i) => {
+    return Array.from({ length: 42 }, (_, i) => {
       const color = colors[i % colors.length];
       const shape = shapes[i % shapes.length];
-      const left = Math.floor((i * 3.1) % 98); // Distribución horizontal equilibrada
-      const duration = 9 + (i % 8) * 1.2; // Duración lenta y elegante (9s - 18s)
-      const delay = (i % 10) * 1.5; // Desfases naturales
-      const size = shape === 'streamer' ? { w: 4, h: 14 } : shape === 'circle' ? { w: 7, h: 7 } : { w: 8, h: 6 };
-      const rotate = (i * 47) % 360;
+      const left = ((i * 2.38) % 96) + 2; // Distribución equilibrada de 2% a 98%
+      const duration = 7 + (i % 7) * 1.1; // Caída fluida y constante (7s a 14s)
+      // Desfase negativo: garantiza que el confeti ya esté cayendo por toda la pantalla desde el milisegundo 0
+      const negativeDelay = -((i * 0.45) % duration);
+      const width = shape === 'ribbon' ? 5 : shape === 'circle' ? 9 : 8;
+      const height = shape === 'ribbon' ? 14 : shape === 'circle' ? 9 : 8;
+      const rotate = (i * 37) % 360;
 
       return {
         id: i,
@@ -21,8 +31,9 @@ export const ContinuousBackgroundConfetti = () => {
         shape,
         left,
         duration,
-        delay,
-        size,
+        negativeDelay,
+        width,
+        height,
         rotate
       };
     });
@@ -31,26 +42,28 @@ export const ContinuousBackgroundConfetti = () => {
   return (
     <div
       aria-hidden="true"
-      className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none"
+      className="fixed inset-0 pointer-events-none z-30 overflow-hidden select-none"
     >
       <style>{`
-        @keyframes gentleConfettiFall {
+        @keyframes constantConfettiFall {
           0% {
-            transform: translateY(-20px) rotate(0deg) translateX(0px);
-            opacity: 0;
+            transform: translateY(-40px) rotate(0deg) rotateX(0deg) translateX(0px);
+            opacity: 0.9;
           }
-          10% {
-            opacity: 0.65;
+          25% {
+            transform: translateY(28vh) rotate(90deg) rotateX(180deg) translateX(18px);
+            opacity: 0.85;
           }
           50% {
-            transform: translateY(50vh) rotate(180deg) translateX(25px);
-            opacity: 0.65;
+            transform: translateY(55vh) rotate(180deg) rotateX(360deg) translateX(-15px);
+            opacity: 0.85;
           }
-          90% {
-            opacity: 0.6;
+          75% {
+            transform: translateY(82vh) rotate(270deg) rotateX(540deg) translateX(15px);
+            opacity: 0.8;
           }
           100% {
-            transform: translateY(105vh) rotate(360deg) translateX(-20px);
+            transform: translateY(110vh) rotate(360deg) rotateX(720deg) translateX(-10px);
             opacity: 0;
           }
         }
@@ -61,15 +74,16 @@ export const ContinuousBackgroundConfetti = () => {
           key={p.id}
           style={{
             position: 'absolute',
-            top: '-20px',
+            top: '-25px',
             left: `${p.left}%`,
-            width: `${p.size.w}px`,
-            height: `${p.size.h}px`,
+            width: `${p.width}px`,
+            height: `${p.height}px`,
             backgroundColor: p.color,
-            borderRadius: p.shape === 'circle' ? '50%' : p.shape === 'streamer' ? '2px' : '1px',
-            animation: `gentleConfettiFall ${p.duration}s linear infinite`,
-            animationDelay: `${p.delay}s`,
-            opacity: 0.6,
+            borderRadius: p.shape === 'circle' ? '50%' : p.shape === 'ribbon' ? '2px' : '1.5px',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
+            animation: `constantConfettiFall ${p.duration}s linear infinite`,
+            animationDelay: `${p.negativeDelay}s`,
+            opacity: 0.85,
             transform: `rotate(${p.rotate}deg)`,
             willChange: 'transform, opacity'
           }}
