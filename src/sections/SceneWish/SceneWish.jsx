@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import birthdayConfig from '../../config/birthday';
 import soundEngine from '../../audio/soundEngine';
 import { WashiTape } from '../../components/common/HandcraftedGraphics';
