@@ -46,6 +46,12 @@ export const SceneWish = () => {
     }, 700);
   };
 
+  useEffect(() => {
+    try {
+      localStorage.removeItem('kimberly_birthday_wish');
+    } catch (e) {}
+  }, []);
+
   return (
     <section className="w-full py-6 select-none">
       <div className="text-center mb-5">
@@ -102,6 +108,15 @@ export const SceneWish = () => {
               <p className="font-display italic text-base sm:text-lg text-[#685E5E] pt-2">
                 {wish.savedNotice}
               </p>
+              <button
+                onClick={() => {
+                  setIsSaved(false);
+                  setWishText('');
+                }}
+                className="text-xs font-body text-[#8C8282] hover:text-[#FF6B6B] underline pt-2 block mx-auto cursor-pointer"
+              >
+                (Escribir otro deseo o editar)
+              </button>
             </div>
           )}
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import birthdayConfig from '../../config/birthday';
-import { WashiTape, HandDrawnPin, DoodleSparkle } from '../../components/common/HandcraftedGraphics';
+import { WashiTape, HandDrawnPin } from '../../components/common/HandcraftedGraphics';
 
 export const Scene04PersonalMessage = () => {
   const content = birthdayConfig.personalMessage;
@@ -16,10 +16,24 @@ export const Scene04PersonalMessage = () => {
 
         {/* Tarjeta estilo hoja de papel artesanal con amplia holgura superior */}
         <div className="bg-[#FFFFFF] paper-sheet pt-8 px-6 pb-6 sm:pt-10 sm:px-10 sm:pb-10 rounded-2xl border border-[#2A2525]/10 shadow-xl relative hand-border-soft">
-          <h2 className="font-display text-2xl sm:text-3xl font-bold text-[#2A2525] mb-5">
-            {content.title}
-          </h2>
+          
+          {/* Repetición de Feliz Cumpleaños en 5 líneas de texto */}
+          <div className="space-y-1 mb-6 text-center sm:text-left border-b border-dashed border-[#2A2525]/10 pb-4">
+            {content.headlineRepetitions?.map((rep, idx) => (
+              <h2
+                key={idx}
+                className="font-display font-black text-2xl sm:text-3xl tracking-tight"
+                style={{
+                  color: idx % 2 === 0 ? '#FF6B6B' : '#E9B872',
+                  opacity: 0.85 + idx * 0.03
+                }}
+              >
+                {rep}
+              </h2>
+            ))}
+          </div>
 
+          {/* Texto profundo y personal */}
           <div className="space-y-4 text-[#2A2525] font-body text-base sm:text-lg leading-relaxed">
             {content.paragraphs.map((paragraph, idx) => (
               <p key={idx} className="relative pl-1">
@@ -28,10 +42,10 @@ export const Scene04PersonalMessage = () => {
             ))}
           </div>
 
-          {/* Firma o detalle cálido al pie */}
+          {/* Firma cálida al pie */}
           <div className="mt-8 pt-6 border-t border-dashed border-[#E9B872] flex items-center justify-between">
             <span className="font-hand text-xl font-bold text-[#FF6B6B]">
-              Para ti, siempre ✨
+              {content.signOff}
             </span>
             <span className="font-hand text-lg text-[#685E5E]">
               {birthdayConfig.celebrationYear}

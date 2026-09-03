@@ -12,7 +12,10 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true,
-    open: false
+    open: false,
+    watch: {
+      ignored: ['**/matlab_animation/**', '**/*.mp4', '**/*.mp3']
+    }
   },
   build: {
     outDir: 'dist',

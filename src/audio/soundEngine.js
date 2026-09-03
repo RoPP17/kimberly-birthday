@@ -288,6 +288,8 @@ class SoundEngine {
     if (!this.bgmAudioElement) {
       const candidates = [
         './assets/audio/musica.mp3',
+        'assets/audio/musica.mp3',
+        '/assets/audio/musica.mp3',
         './assets/audio/musica-fondo.mp3',
         './assets/audio/cancion.mp3'
       ];

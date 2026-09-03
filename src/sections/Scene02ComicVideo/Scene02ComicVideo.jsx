@@ -266,7 +266,7 @@ export const Scene02ComicVideo = ({ onComplete }) => {
 
   return (
     <section className="w-full py-2 select-none">
-      <div className="w-full bg-[#FFFFFF] rounded-2xl border border-[#2A2525]/15 shadow-xl p-5 sm:p-7 relative hand-border-soft overflow-hidden">
+      <div className="w-full bg-[#FFFFFF] rounded-2xl border border-[#2A2525]/15 shadow-xl p-6 sm:p-8 relative hand-border-soft overflow-hidden min-h-[500px] sm:min-h-[560px] flex flex-col justify-between">
         
         {/* Barra de progreso segmentada */}
         <div className="flex gap-1.5 mb-4">
@@ -290,7 +290,7 @@ export const Scene02ComicVideo = ({ onComplete }) => {
         </div>
 
         {/* Badge e indicador */}
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between mb-4">
           <span className="font-body text-xs font-bold text-[#FF6B6B] uppercase tracking-wider bg-[#FFF0F0] px-3 py-1 rounded-full border border-[#FF6B6B]/20">
             {birthdayConfig.comic.badge}
           </span>
@@ -299,14 +299,14 @@ export const Scene02ComicVideo = ({ onComplete }) => {
           </span>
         </div>
 
-        {/* Escenario del dibujo */}
-        <div className="min-h-[170px] flex items-center justify-center my-2">
+        {/* Escenario del dibujo con amplia holgura vertical */}
+        <div className="min-h-[220px] sm:min-h-[260px] flex items-center justify-center my-6 sm:my-8 flex-1">
           {renderVisual(current.doodle)}
         </div>
 
-        {/* Narración limpia inferior (sin cajas rojas arriba) */}
+        {/* Narración limpia inferior con mayor separación del dibujo */}
         {current.doodle !== 'punchline' && (
-          <p className="font-body text-sm sm:text-base text-[#2A2525] text-center min-h-[44px] px-2 flex items-center justify-center leading-relaxed">
+          <p className="font-body text-base sm:text-lg text-[#2A2525] text-center min-h-[60px] px-3 my-4 flex items-center justify-center leading-relaxed">
             {current.text}
           </p>
         )}

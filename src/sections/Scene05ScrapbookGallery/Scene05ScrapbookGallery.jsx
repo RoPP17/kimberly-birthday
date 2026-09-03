@@ -27,16 +27,20 @@ export const Scene05ScrapbookGallery = () => {
     setActivePhotoIndex((prev) => (prev - 1 + photos.length) % photos.length);
   };
 
+  const [failedImages, setFailedImages] = useState({});
+
+  const handleImageError = (id) => {
+    setFailedImages((prev) => ({ ...prev, [id]: true }));
+  };
+
   // Contenido de la foto o placeholder artístico
   const renderPhotoContent = (photo) => {
-    const [imgError, setImgError] = React.useState(false);
-
-    if (photo.src && !imgError) {
+    if (photo.src && !failedImages[photo.id]) {
       return (
         <img
           src={photo.src}
           alt={`Recuerdo ${photo.id}`}
-          onError={() => setImgError(true)}
+          onError={() => handleImageError(photo.id)}
           className="w-full aspect-[4/5] object-cover rounded-sm transition-transform duration-500 group-hover:scale-102"
           loading="lazy"
         />
