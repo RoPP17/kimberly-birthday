@@ -154,22 +154,46 @@ export const Scene08HandwrittenLetter = ({ onLetterOpenStateChange }) => {
                   title="Haz clic para hacer zoom"
                 />
               ) : (
-                /* Marcador visual elegante preparado para cuando se suba la foto */
-                <div className="w-full py-12 px-4 flex flex-col items-center justify-center text-center space-y-3">
-                  <div className="w-16 h-16 rounded-full bg-[#FF6B6B]/10 border-2 border-dashed border-[#FF6B6B] flex items-center justify-center text-3xl">
-                    ✉️
+                /* Carta manuscrita artesanal estilizada con letra de puño y letra */
+                <div className="w-full bg-[#FFFDF8] paper-sheet p-6 sm:p-8 rounded-xl border border-[#E9B872]/50 shadow-inner relative text-left select-text">
+                  <div className="flex justify-between items-center text-xs font-hand text-[#8C8282] border-b border-dashed border-[#2A2525]/15 pb-2 mb-4">
+                    <span>Septiembre, 2026</span>
+                    <span>Para: Kim ✨</span>
                   </div>
-                  <h3 className="font-display font-bold text-lg sm:text-xl text-[#2A2525]">
-                    Carta manuscrita para Kimberly
-                  </h3>
-                  <p className="font-body text-xs sm:text-sm text-[#685E5E] max-w-xs">
-                    Cuando coloques la foto de tu carta en:
-                    <br />
-                    <code className="bg-[#FAF7F2] px-2 py-0.5 rounded font-mono text-xs text-[#FF6B6B] font-bold block mt-1">
-                      public/assets/letter/carta-0{currentPage + 1}.jpg
-                    </code>
-                    se visualizará aquí con zoom y alta resolución.
-                  </p>
+
+                  {currentPage === 0 ? (
+                    <div className="font-hand text-xl sm:text-2xl text-[#2A2525] leading-relaxed space-y-4">
+                      <p>
+                        Hola Kimberly,
+                      </p>
+                      <p>
+                        Te escribo estas líneas porque quería hacerte llegar algo que se sintiera real, de esos detalles que uno guarda y que tienen un peso distinto a un mensaje cualquiera.
+                      </p>
+                      <p>
+                        Quería que hoy supieras lo mucho que valoro coincidir contigo. Tienes una personalidad increíble, de esas que iluminan cualquier lugar sin proponérselo y una calidez que se hace notar siempre.
+                      </p>
+                      <p className="text-right text-[#FF6B6B] font-bold pt-2">
+                        (Continúa en la página 2 ➔)
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="font-hand text-xl sm:text-2xl text-[#2A2525] leading-relaxed space-y-4">
+                      <p>
+                        Admiro muchísimo tus ganas de salir adelante, tu nobleza y la forma en que siempre tienes una palabra sincera o una ocurrencia que alegra el día.
+                      </p>
+                      <p>
+                        Deseo de corazón que este nuevo año te traiga cosas gigantescas, que cada meta que tienes en mente se vaya abriendo camino y que nunca dejes de ser esa persona tan especial.
+                      </p>
+                      <p className="pt-2">
+                        ¡Feliz cumpleaños! Pásala increíble hoy y siempre.
+                      </p>
+                      <p className="text-right pt-4 font-bold text-[#2A2525]">
+                        Con mucho cariño,
+                        <br />
+                        <span className="text-2xl sm:text-3xl text-[#FF6B6B]">Roberto Andrés ✨</span>
+                      </p>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
