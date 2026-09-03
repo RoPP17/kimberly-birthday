@@ -11,7 +11,8 @@ export default defineConfig({
   base: './',
   server: {
     port: 3000,
-    open: true
+    host: true,
+    open: false
   },
   build: {
     outDir: 'dist',
