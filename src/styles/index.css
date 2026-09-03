@@ -1,0 +1,276 @@
+/* ==========================================================================
+   ESTILOS GENERALES & SISTEMA DE DISEÑO ARTESANAL (SCRAPBOOK KIMBERLY)
+   ========================================================================== */
+
+:root {
+  --bg-cream: #FAF7F2;
+  --bg-paper: #F6EFEA;
+  --bg-card: #FFFFFF;
+  --text-ink: #2A2525;
+  --text-muted: #685E5E;
+  --coral: #FF6B6B;
+  --coral-soft: #FF8E8E;
+  --peach: #F8B195;
+  --lavender: #A88BBA;
+  --lavender-soft: #D4C3E0;
+  --mustard: #E9B872;
+  --mint: #A2D2BF;
+  --shadow-soft: 0 10px 30px -8px rgba(42, 37, 37, 0.08);
+  --shadow-polaroid: 0 16px 36px -10px rgba(42, 37, 37, 0.14), 0 2px 8px rgba(42, 37, 37, 0.04);
+  
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-hand: 'Caveat', cursive;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-cream);
+  color: var(--text-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  background-color: var(--bg-cream);
+  background-image: 
+    radial-gradient(var(--text-ink) 0.5px, transparent 0.5px),
+    radial-gradient(var(--peach) 0.5px, var(--bg-cream) 0.5px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+  background-color: var(--bg-cream);
+}
+
+/* Tipografía de autor */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* ==========================================================================
+   ESTÉTICA DE SCRAPBOOK ARTESANAL
+   ========================================================================== */
+
+/* Bordes orgánicos e imperfectos (hechos a mano) */
+.hand-border {
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+
+.hand-border-soft {
+  border-radius: 18px 24px 20px 26px / 24px 18px 26px 20px;
+}
+
+/* Cinta adhesiva (Washi Tape) */
+.washi-tape {
+  position: absolute;
+  height: 24px;
+  width: 90px;
+  background-color: rgba(248, 177, 149, 0.7);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  z-index: 5;
+  clip-path: polygon(4% 0%, 96% 0%, 100% 50%, 96% 100%, 4% 100%, 0% 50%);
+  pointer-events: none;
+}
+
+.washi-tape-mint {
+  background-color: rgba(162, 210, 191, 0.75);
+}
+
+.washi-tape-lavender {
+  background-color: rgba(212, 195, 224, 0.75);
+}
+
+.washi-tape-mustard {
+  background-color: rgba(233, 184, 114, 0.75);
+}
+
+/* Tarjeta Polaroid */
+.polaroid-card {
+  background: #FFFFFF;
+  padding: 14px 14px 22px 14px;
+  box-shadow: var(--shadow-polaroid);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.polaroid-card:hover {
+  transform: scale(1.03) rotate(0deg) !important;
+  box-shadow: 0 22px 42px -10px rgba(42, 37, 37, 0.22);
+  z-index: 10;
+}
+
+/* Papel arrugado / Textura sutil */
+.paper-sheet {
+  background-color: var(--bg-paper);
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
+  background-size: 20px 20px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+}
+
+/* Botón sensorial artesanal */
+.btn-handcrafted {
+  font-family: var(--font-hand);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background-color: var(--coral);
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 28px;
+  cursor: pointer;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow: 0 6px 18px rgba(255, 107, 107, 0.35), 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-handcrafted:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(255, 107, 107, 0.45);
+  background-color: #ff5454;
+}
+
+.btn-handcrafted:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: var(--text-ink);
+  border: 2px dashed rgba(42, 37, 37, 0.25);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.btn-secondary:hover {
+  background-color: #FAF4EF;
+  border-color: var(--coral);
+  color: var(--coral);
+}
+
+/* Badges / Sellos */
+.hand-badge {
+  display: inline-block;
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: rgba(255, 107, 107, 0.12);
+  color: var(--coral);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+/* ==========================================================================
+   ANIMACIONES DE CÓMIC & MOTION
+   ========================================================================== */
+
+@keyframes floatDoodle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(2deg);
+  }
+}
+
+.animate-float {
+  animation: floatDoodle 4s ease-in-out infinite;
+}
+
+@keyframes shakeComic {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-4px, 4px) rotate(-1.5deg); }
+  40% { transform: translate(4px, -4px) rotate(1.5deg); }
+  60% { transform: translate(-3px, 1px) rotate(-1deg); }
+  80% { transform: translate(3px, -1px) rotate(1deg); }
+}
+
+.animate-shake {
+  animation: shakeComic 0.25s infinite;
+}
+
+@keyframes flameFlicker {
+  0%, 100% { transform: scale(1) rotate(-1deg); opacity: 0.95; }
+  25% { transform: scale(1.08, 0.94) rotate(1.5deg); opacity: 1; }
+  50% { transform: scale(0.96, 1.05) rotate(-2deg); opacity: 0.88; }
+  75% { transform: scale(1.05, 0.97) rotate(2deg); opacity: 1; }
+}
+
+.flame-anim {
+  transform-origin: bottom center;
+  animation: flameFlicker 0.35s infinite ease-in-out;
+}
+
+/* ==========================================================================
+   SAFE AREAS & RESPONSIVE DESIGN MÓVIL
+   ========================================================================== */
+
+.safe-top {
+  padding-top: env(safe-area-inset-top, 16px);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 24px);
+}
+
+.screen-container {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 20px 20px 80px 20px;
+}
+
+/* Scrollbar sutil y limpia */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DFD7CF;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C4BAAF;
+}
+
+/* Respeta preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
